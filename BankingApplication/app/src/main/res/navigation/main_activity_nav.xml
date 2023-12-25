@@ -3,4 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_activity_nav"
-    />
+    app:startDestination="@id/addCardFragment">
+    <fragment
+        android:id="@+id/addCardFragment"
+        android:name="com.berfinilik.bankingapplication.ui.fragments.AddCardFragment"
+        android:label="fragment_add_card"
+        tools:layout="@layout/fragment_add_card" />
+</navigation>
