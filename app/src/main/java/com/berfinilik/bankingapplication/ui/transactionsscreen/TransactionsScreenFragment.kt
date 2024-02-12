@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.berfinilik.bankingapplication.R
-import com.berfinilik.bankingapplication.databinding.FragmentHomePageBinding
 import com.berfinilik.bankingapplication.databinding.FragmentTransactionsScreenBinding
 
 class TransactionsScreenFragment : Fragment() {

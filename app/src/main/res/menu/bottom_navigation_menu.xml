@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <item
-        android:id="@+id/homePageFragment"
+        android:id="@+id/loginFragment"
         android:icon="@drawable/ic_home"
         tools:ignore="MenuTitle" />
 
@@ -12,7 +12,6 @@
         android:icon="@drawable/ic_baseline_credit_card_24"
         tools:ignore="MenuTitle"/>
     <item
-
         tools:ignore="MenuTitle"/>
     <item
         android:id="@+id/transactionsScreenFragment"
