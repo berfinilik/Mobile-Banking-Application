@@ -9,6 +9,8 @@ import com.berfinilik.bankingapplication.databinding.FragmentAddCardBinding
 
 class AddCardFragment : Fragment() {
 
+    //merhaba
+
     private  var _binding:FragmentAddCardBinding?=null
     private val binding get() = _binding!!
 
