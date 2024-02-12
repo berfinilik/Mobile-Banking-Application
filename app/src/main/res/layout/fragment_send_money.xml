@@ -207,23 +207,10 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="398dp"
         android:layout_height="41dp"
-<<<<<<< HEAD
-        android:layout_marginTop="18dp"
-=======
-        android:layout_marginTop="16dp"
->>>>>>> 240fe51 (bottom navigation bar,view binding eklendi.)
-        android:layout_marginEnd="20dp"
-        android:background="@color/black"
-        app:itemIconTint="@color/white"
+        android:layout_marginTop="18dp">
 
-        app:layout_constraintEnd_toEndOf="parent"
-<<<<<<< HEAD
-=======
-        app:layout_constraintHorizontal_bias="0.428"
->>>>>>> 240fe51 (bottom navigation bar,view binding eklendi.)
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/menu_tasarim">
+
+
 
         <TextView
             android:id="@+id/text"
