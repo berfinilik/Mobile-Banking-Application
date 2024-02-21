@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "943378191739",
+    "project_id": "mobilebanking-9f2e1",
+    "storage_bucket": "mobilebanking-9f2e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943378191739:android:1ba8502c4047ec281919de",
+        "android_client_info": {
+          "package_name": "com.berfinilik.bankingapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAS6VFpW4tFGrSrm5qw-echgjO1dvtD0ss"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

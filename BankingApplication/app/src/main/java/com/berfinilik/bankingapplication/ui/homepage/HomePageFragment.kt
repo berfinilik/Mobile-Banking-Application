@@ -1,4 +1,4 @@
-package com.berfinilik.bankingapplication.ui.fragments
+package com.berfinilik.bankingapplication.ui.homepage
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import com.berfinilik.bankingapplication.R
 import com.berfinilik.bankingapplication.databinding.FragmentAddCardBinding
 import com.berfinilik.bankingapplication.databinding.FragmentHomePageBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomePageFragment : Fragment() {
 
     private lateinit var binding: FragmentHomePageBinding

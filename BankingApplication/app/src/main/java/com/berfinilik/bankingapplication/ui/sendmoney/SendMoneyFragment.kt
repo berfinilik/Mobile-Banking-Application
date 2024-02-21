@@ -1,4 +1,4 @@
-package com.berfinilik.bankingapplication.ui.fragments
+package com.berfinilik.bankingapplication.ui.sendmoney
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.berfinilik.bankingapplication.databinding.FragmentCardManagementBinding
 import com.berfinilik.bankingapplication.databinding.FragmentSendMoneyBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SendMoneyFragment : Fragment() {
 
     private lateinit var binding: FragmentSendMoneyBinding
