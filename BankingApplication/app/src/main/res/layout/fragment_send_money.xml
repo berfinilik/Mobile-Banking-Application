@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".ui.fragments.SendMoneyFragment">
+    tools:context=".ui.sendmoney.SendMoneyFragment">
 
     <Button
         android:id="@+id/buttonTransfer"
