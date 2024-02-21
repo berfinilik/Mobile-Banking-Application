@@ -1,4 +1,6 @@
 package com.berfinilik.bankingapplication.ui.addcardscreen
 
-class AddCardViewModel {
+import androidx.lifecycle.ViewModel
+
+class AddCardViewModel : ViewModel() {
 }

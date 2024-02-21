@@ -1,40 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#030507"
         android:gravity="center"
-        android:orientation="vertical"
         tools:context=".ui.loginscreen.LoginFragment">
 
+        <EditText
+            android:id="@+id/etPhoneNumber"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginEnd="29dp"
+            android:layout_marginBottom="20dp"
+            android:ems="10"
+            android:hint="Telefon Numarasını Giriniz"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/etSifre"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
         <EditText
-            android:id="@+id/sifre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="####"
-            android:inputType="numberPassword"
-            android:maxLength="4"
-            android:text="0000"
-            android:textSize="48sp" />
+            android:id="@+id/etSifre"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="72dp"
+            android:ems="10"
+            android:hint="Şifrenizi Giriniz"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/btnGiris"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etPhoneNumber" />
 
         <Button
-            android:id="@+id/btn_login"
-            android:layout_width="wrap_content"
+            android:id="@+id/btnGiris"
+            android:layout_width="267dp"
             android:layout_height="wrap_content"
-            android:text="Login" />
+            android:layout_marginEnd="61dp"
+            android:layout_marginBottom="224dp"
+            android:text="GİRİŞ YAP"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etSifre" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="76dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="113dp"
+            android:text="HOŞGELDİNİZ"
+            android:textColor="#FBF5F5"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toTopOf="@+id/etPhoneNumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="16dp"
-        android:text="HOŞGELDİNİZ!"
-        android:textSize="48sp" />
+
+
 </FrameLayout>

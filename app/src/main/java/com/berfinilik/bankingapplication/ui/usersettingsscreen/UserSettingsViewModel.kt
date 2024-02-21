@@ -1,4 +1,6 @@
 package com.berfinilik.bankingapplication.ui.usersettingsscreen
 
-class UserSettingsViewModel {
+import androidx.lifecycle.ViewModel
+
+class UserSettingsViewModel: ViewModel(){
 }

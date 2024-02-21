@@ -4,6 +4,8 @@ plugins {
 
     id 'androidx.navigation.safeargs.kotlin'
 
+    id("com.google.gms.google-services")
+
 }
 
 android {
@@ -13,12 +15,13 @@ android {
     defaultConfig {
         applicationId "com.berfinilik.bankingapplication"
         minSdk 24
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
 
     //viewbinding
 
@@ -52,6 +55,8 @@ apply plugin: "dagger.hilt.android.plugin"
 
 dependencies {
 
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.10.2'
+    implementation 'com.google.firebase:firebase-auth-ktx:22.3.1'
     def nav_version = "2.5.3"
 
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -75,7 +80,7 @@ dependencies {
     //viewmodel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
 
-
-
-
+    //firebase
+    implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
+    implementation("com.google.firebase:firebase-analytics")
 }

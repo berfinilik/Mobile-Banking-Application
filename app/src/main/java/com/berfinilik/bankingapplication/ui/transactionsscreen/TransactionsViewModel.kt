@@ -1,4 +1,6 @@
 package com.berfinilik.bankingapplication.ui.transactionsscreen
 
-class TransactionsViewModel {
+import androidx.lifecycle.ViewModel
+
+class TransactionsViewModel : ViewModel(){
 }

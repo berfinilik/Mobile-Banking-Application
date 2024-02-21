@@ -11,8 +11,8 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#030507"
         android:padding="16dp"
-        android:background="@color/black"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,20 +35,20 @@
                     android:layout_height="wrap_content"
                     android:textColor="#fff"
                     android:textSize="18sp"
-                    tools:text="Samantha Oldsen"/>
+                    tools:text="Samantha Oldsen" />
 
                 <TextView
                     android:id="@+id/iban"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#fff"
-                    tools:text="TR21 5689 4225 6315 5550 1054 01"/>
+                    tools:text="TR21 5689 4225 6315 5550 1054 01" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:orientation="vertical"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tv_currency"
@@ -62,7 +62,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#fff"
-                    tools:text="20000 TL"/>
+                    tools:text="20000 TL" />
             </LinearLayout>
         </LinearLayout>
 
@@ -75,7 +75,8 @@
                 android:id="@+id/transfer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TRANSFER"/>
+                android:text="TRANSFER" />
+
 
             <Button
                 android:id="@+id/request"
@@ -94,6 +95,6 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"/>
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
 </LinearLayout>

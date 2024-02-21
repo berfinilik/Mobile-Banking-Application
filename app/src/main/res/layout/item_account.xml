@@ -11,12 +11,15 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:backgroundTint="@color/white"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/black"
             android:textSize="18sp"
             tools:text="Samantha Oldsen" />
 
@@ -24,6 +27,8 @@
             android:id="@+id/tv_iban"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
             tools:text="TR21 5689 4225 6315 5550 1054 01" />
 
     </LinearLayout>
@@ -32,6 +37,8 @@
         android:id="@+id/tv_bakiye"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
         tools:text="20000" />
 
 </LinearLayout>

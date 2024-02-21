@@ -77,3 +77,5 @@
         app:layout_constraintTop_toBottomOf="@+id/mesaj" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

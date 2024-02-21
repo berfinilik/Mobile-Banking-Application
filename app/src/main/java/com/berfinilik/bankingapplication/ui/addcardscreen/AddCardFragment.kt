@@ -9,8 +9,6 @@ import com.berfinilik.bankingapplication.databinding.FragmentAddCardBinding
 
 class AddCardFragment : Fragment() {
 
-    //merhaba
-
     private  var _binding:FragmentAddCardBinding?=null
     private val binding get() = _binding!!
 
@@ -18,11 +16,8 @@ class AddCardFragment : Fragment() {
         _binding=FragmentAddCardBinding.inflate(inflater,container,false)
         return binding.root
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
-
 }

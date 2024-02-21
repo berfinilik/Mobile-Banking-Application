@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import com.berfinilik.bankingapplication.R
 import com.berfinilik.bankingapplication.databinding.FragmentAddCardBinding
 import com.berfinilik.bankingapplication.databinding.FragmentCardManagementBinding
 import com.berfinilik.bankingapplication.databinding.FragmentSendMoneyBinding
@@ -16,9 +18,13 @@ class SendMoneyFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding= FragmentSendMoneyBinding.inflate(inflater,container,false)
         return binding.root
-
     }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        val myButton = binding.buttonTransfer
+        myButton.setBackgroundResource(R.drawable.custom_button_background)
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

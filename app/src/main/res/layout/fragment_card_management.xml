@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="#030507"
     tools:context=".ui.cardmanagementscreen.CardManagementFragment">
 
     <TextView
@@ -24,6 +24,7 @@
         android:layout_height="91dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints">
 
@@ -70,16 +71,16 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton2"
-        android:layout_width="67dp"
-        android:layout_height="68dp"
+        android:layout_width="58dp"
+        android:layout_height="61dp"
         android:background="@color/white"
         android:clickable="true"
         android:src="@android:drawable/ic_input_add"
         app:backgroundTint="@color/black"
         app:fabSize="normal"
         app:tint="@color/white"
-        tools:layout_editor_absoluteX="319dp"
-        tools:layout_editor_absoluteY="36dp" />
+        tools:layout_editor_absoluteX="328dp"
+        tools:layout_editor_absoluteY="42dp" />
 
     <TextView
         android:id="@+id/textView"
@@ -89,15 +90,15 @@
         android:text="Card Management"
         android:textColor="@color/white"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="55dp" />
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="63dp" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="60dp"
         android:layout_height="71dp"
         tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="36dp"
+        tools:layout_editor_absoluteY="42dp"
         tools:src="@tools:sample/avatars" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

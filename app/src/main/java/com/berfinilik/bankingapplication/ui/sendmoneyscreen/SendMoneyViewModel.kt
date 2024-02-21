@@ -1,4 +1,6 @@
 package com.berfinilik.bankingapplication.ui.sendmoneyscreen
 
-class SendMoneyViewModel {
+import androidx.lifecycle.ViewModel
+
+class SendMoneyViewModel : ViewModel() {
 }
