@@ -1,12 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_activity_nav"
-    app:startDestination="@id/addCardFragment">
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.berfinilik.bankingapplication.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.berfinilik.bankingapplication.ui.homepage.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" />
+
+    <fragment
+        android:id="@+id/cardManagementFragment"
+        android:name="com.berfinilik.bankingapplication.ui.cardmanagement.CardManagementFragment"
+        android:label="fragment_card_management"
+        tools:layout="@layout/fragment_card_management" />
+
     <fragment
         android:id="@+id/addCardFragment"
-        android:name="com.berfinilik.bankingapplication.ui.addcardscreen.AddCardFragment"
+        android:name="com.berfinilik.bankingapplication.ui.addcard.AddCardFragment"
         android:label="fragment_add_card"
         tools:layout="@layout/fragment_add_card" />
+
+    <fragment
+        android:id="@+id/sendMoneyFragment"
+        android:name="com.berfinilik.bankingapplication.ui.sendmoney.SendMoneyFragment"
+        android:label="fragment_send_money"
+        tools:layout="@layout/fragment_send_money" />
+
+    <action
+        android:id="@+id/action_loginFragment_to_homePageFragment"
+        app:destination="@id/homePageFragment" />
+
+    <action
+        android:id="@+id/action_homePageFragment_to_cardManagementFragment"
+        app:destination="@id/cardManagementFragment" />
+
 </navigation>

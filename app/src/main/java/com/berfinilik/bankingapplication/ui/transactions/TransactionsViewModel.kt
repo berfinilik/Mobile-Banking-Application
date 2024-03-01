@@ -1,4 +1,4 @@
-package com.berfinilik.bankingapplication.ui.transactionsscreen
+package com.berfinilik.bankingapplication.ui.transactions
 
 import androidx.lifecycle.ViewModel
 

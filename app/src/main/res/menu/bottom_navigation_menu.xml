@@ -3,15 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <item
-        android:id="@+id/loginFragment"
+        android:id="@+id/homePageFragment"
         android:icon="@drawable/ic_home"
         tools:ignore="MenuTitle" />
 
     <item
         android:id="@+id/cardManagementFragment"
-        android:icon="@drawable/ic_baseline_credit_card_24"
+        android:icon="@drawable/ic_credit_card"
         tools:ignore="MenuTitle"/>
     <item
+        android:icon="@drawable/quickmenu"
         tools:ignore="MenuTitle"/>
     <item
         android:id="@+id/transactionsScreenFragment"

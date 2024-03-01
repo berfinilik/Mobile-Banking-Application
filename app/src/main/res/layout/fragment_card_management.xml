@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#030507"
-    tools:context=".ui.cardmanagementscreen.CardManagementFragment">
+    tools:context=".ui.cardmanagement.CardManagementFragment">
 
     <TextView
         android:id="@+id/textView5"
@@ -20,8 +20,8 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout3"
-        android:layout_width="422dp"
-        android:layout_height="91dp"
+        android:layout_width="441dp"
+        android:layout_height="88dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.545"
@@ -31,8 +31,8 @@
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@id/bottomNavigationAppBar"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_width="447dp"
+            android:layout_height="43dp"
             android:layout_marginTop="50dp"
             android:backgroundTint="@color/black"
             android:gravity="bottom"
@@ -41,10 +41,10 @@
             app:fabCradleVerticalOffset="1dp">
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
-                android:background="@color/black"
+                android:background="@color/white"
                 android:elevation="0dp"
                 app:elevation="0dp"
                 app:itemIconTint="@color/white"
@@ -70,7 +70,7 @@
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
+        android:id="@+id/fabAddCard"
         android:layout_width="58dp"
         android:layout_height="61dp"
         android:background="@color/white"
@@ -102,7 +102,7 @@
         tools:src="@tools:sample/avatars" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton3"
+        android:id="@+id/fabSwap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -110,13 +110,13 @@
         android:layout_marginBottom="14dp"
         android:clickable="true"
         android:src="@drawable/baseline_swap_horiz_24"
-        app:backgroundTint="@color/white"
+        app:backgroundTint="#F21F2022"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton4"
+        app:layout_constraintEnd_toStartOf="@+id/fabFreeze"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton4"
+        android:id="@+id/fabFreeze"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
@@ -124,24 +124,24 @@
         android:clickable="true"
         android:src="@drawable/lockicon"
         android:tint="@color/white"
-        app:backgroundTint="@color/white"
+        app:backgroundTint="#F21F2022"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintStart_toEndOf="@+id/floatingActionButton3" />
+        app:layout_constraintStart_toEndOf="@+id/fabSwap" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton5"
+        android:id="@+id/fabSend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="41dp"
         android:layout_marginBottom="14dp"
         android:clickable="true"
-        android:src="@drawable/baseline_send_24"
-        app:backgroundTint="@color/white"
+        android:src="@drawable/ic_send"
+        app:backgroundTint="#F21F2022"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
-        app:layout_constraintStart_toEndOf="@+id/floatingActionButton4" />
+        app:layout_constraintStart_toEndOf="@+id/fabFreeze" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton6"
+        android:id="@+id/fabReceive"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="41dp"
@@ -149,9 +149,9 @@
         android:clickable="true"
         android:src="@drawable/receive"
         android:tint="@color/white"
-        app:backgroundTint="@color/white"
+        app:backgroundTint="#F21F2022"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
-        app:layout_constraintStart_toEndOf="@+id/floatingActionButton5" />
+        app:layout_constraintStart_toEndOf="@+id/fabSend" />
 
     <TextView
         android:id="@+id/textView2"
@@ -184,6 +184,102 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout3"
         app:layout_constraintStart_toEndOf="@+id/textView3" />
+
+    <ImageView
+        android:id="@+id/iv_card"
+        android:layout_width="330dp"
+        android:layout_height="208dp"
+        android:src="@drawable/custom_button_background"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="134dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="93dp"
+        android:layout_height="24dp"
+        android:text="GT BANK"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="147dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Card Balance"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="186dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="169dp"
+        android:layout_height="49dp"
+        android:text="$5631.00"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="223dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="326dp"
+        android:layout_height="63dp"
+        android:src="@drawable/custom_button_background"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="280dp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="66dp"
+        android:layout_height="23dp"
+        android:text="08/25"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="289dp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="171dp"
+        android:layout_height="19dp"
+        android:text="OLIVER WATSON"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="319dp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="82dp"
+        android:layout_height="16dp"
+        android:text="**** 1226"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="290dp"
+        tools:layout_editor_absoluteY="322dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="50dp"
+        android:layout_height="42dp"
+        android:src="@drawable/temassiz"
+        tools:layout_editor_absoluteX="302dp"
+        tools:layout_editor_absoluteY="230dp" />
+
+    <LinearLayout
+        android:layout_width="449dp"
+        android:layout_height="502dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="0dp"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="449dp"
+        android:layout_height="252dp"
+        android:background="#F21F2022"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="503dp"></LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
