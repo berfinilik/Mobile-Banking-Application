@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="jobs">
+        <item>İnşaat İşçisi</item>
+        <item>Doktor</item>
+        <item>Bankacı</item>
+        <item>Mühendis</item>
+        <item>Girişimci</item>
+        <item>Çiftçi</item>
+        <item>Polis</item>
+        <item>Asker</item>
+        <item>Sporcu</item>
+        <item>Öğrenci</item>
+        <item>Öğretmen</item>
+        <item>Garson</item>
+        <item>İşçi</item>
+        <item>Şoför</item>
+        <item>Elektrikçi</item>
+        <item>Satış Temsilcisi</item>
+        <item>Hemşire</item>
+        <item>Avukat</item>
+        <item>Aşçı</item>
+        <item>Yazar</item>
+        <item>Veteriner</item>
+        <item>Diğer</item>
+    </string-array>
+</resources>

@@ -12,15 +12,15 @@
         android:icon="@drawable/ic_credit_card"
         tools:ignore="MenuTitle"/>
     <item
-        android:icon="@drawable/quickmenu"
+        android:icon="@drawable/ic_quickmenu"
         tools:ignore="MenuTitle"/>
     <item
-        android:id="@+id/transactionsScreenFragment"
-        android:icon="@drawable/transactionicon"
+        android:id="@+id/sendMoneyFragment"
+        android:icon="@drawable/ic_transaction"
         tools:ignore="MenuTitle"/>
     <item
         android:id="@+id/userSettingsFragment"
-        android:icon="@drawable/ic_user"
+        android:icon="@drawable/ic_admin"
         tools:ignore="MenuTitle"/>
 
 </menu>

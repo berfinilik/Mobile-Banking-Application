@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import com.berfinilik.bankingapplication.databinding.FragmentSendMoneyBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class SendMoneyFragment : Fragment() {
 
@@ -16,7 +17,7 @@ class SendMoneyFragment : Fragment() {
 
     private lateinit var editTextTransferMiktari: EditText
     private lateinit var buttonTransfer: Button
-
+    private lateinit var bottomNavigationView: BottomNavigationView
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -25,13 +26,11 @@ class SendMoneyFragment : Fragment() {
         _binding = FragmentSendMoneyBinding.inflate(inflater, container, false)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         editTextTransferMiktari = binding.editTextTransferMiktari
         buttonTransfer = binding.buttonTransfer
     }
-
     private fun validateInput(): Boolean {
         val transferAmount = editTextTransferMiktari.text.toString().toDoubleOrNull()
         if (transferAmount == null || transferAmount <= 0) {
@@ -40,7 +39,6 @@ class SendMoneyFragment : Fragment() {
         }
         return true
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.sign.SignUpFragment">
+
+    <LinearLayout
+        android:id="@+id/layout_user_name_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_name_sign_up">
+
+        <ImageView
+            android:id="@+id/iv_user"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_user"></ImageView>
+
+        <EditText
+            android:id="@+id/edittext_id_name_sign_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="AD"></EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_user_id_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_user_name_sign_up">
+
+        <ImageView
+            android:id="@+id/iv_id_number"
+            android:layout_width="38dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_mail"></ImageView>
+
+        <EditText
+            android:id="@+id/edittext_mail_sign_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="E-MAİL"></EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_user_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_user_id_sign_up">
+
+        <ImageView
+            android:id="@+id/iv_password"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_password"></ImageView>
+
+
+        <EditText
+            android:id="@+id/edittext_user_password_sign_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="ŞİFRE"
+            android:inputType="textPassword"></EditText>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout_phone_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_user_password">
+
+        <ImageView
+            android:id="@+id/iv_phone_number"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_phone"></ImageView>
+
+
+        <EditText
+            android:id="@+id/edittext_phone_sign_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="TELEFON NUMARASI"
+
+            android:inputType="numberDecimal"></EditText>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout_address_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_phone_sign_up">
+
+        <ImageView
+            android:id="@+id/iv_address"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_address"></ImageView>
+
+        <TextView
+            android:id="@+id/tvAdres"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:backgroundTint="@color/white"
+            android:gravity="center"
+            android:onClick="createAddress"
+            android:text="ADRES"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout_profession_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_address_sign_up">
+
+        <ImageView
+            android:id="@+id/iv_profession"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_profession"></ImageView>
+
+        <Spinner
+            android:id="@+id/jobSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/button_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:layout_marginBottom="44dp"
+        android:backgroundTint="@color/black"
+        android:onClick="signUp"
+        android:text="KAYIT OL"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_profession_sign_up"></Button>
+
+    <ImageView
+        android:id="@+id/iv_bank_sign_up"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="157dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_bank"
+        app:layout_constraintBottom_toTopOf="@+id/app_name_sign_up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/app_name_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="133dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="109dp"
+        android:layout_marginBottom="19dp"
+        android:text="KAYIT OL"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/layout_user_name_sign_up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_bank_sign_up" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

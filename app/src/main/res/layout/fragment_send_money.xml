@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
-    tools:context=".ui.sendmoney.SendMoneyFragment">
+    android:background="@color/white"
+    tools:context=".ui.sendmoney.SendMoneyFragment"
+    tools:menu="@menu/menu_tasarim">
 
     <Button
         android:id="@+id/buttonTransfer"
         android:layout_width="356dp"
         android:layout_height="51dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="28dp"
         android:background="@drawable/custom_button_background"
         android:backgroundTint="@color/white"
@@ -19,16 +21,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTransferMiktari" />
 
     <EditText
         android:id="@+id/editTextTransferMiktari"
         android:layout_width="226dp"
         android:layout_height="81dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="$"
-        android:inputType="textPersonName"
+        android:hint="₺"
+        android:inputType="numberDecimal"
         android:textColor="@color/white"
         android:textColorHint="@color/cardview_dark_background"
         android:textSize="55sp"
@@ -39,83 +42,90 @@
 
     <ImageView
         android:id="@+id/imageViewKisi"
-        android:layout_width="114dp"
-        android:layout_height="108dp"
-        android:layout_marginTop="16dp"
-        android:scaleType="center"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="200dp"
+        android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        tools:src="?attr/selectableItemBackgroundBorderless" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_user" />
+
 
     <TextView
         android:id="@+id/textViewKisi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="90dp"
         android:text="Samantha Oldsen"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewKisi" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="393dp"
-        android:layout_height="0dp"
+        android:layout_width="359dp"
+        android:layout_height="71dp"
         android:layout_marginStart="2dp"
-        android:layout_marginBottom="208dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="250dp"
         android:background="#191818"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent">
 
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="362dp"
+            android:layout_height="76dp"
+            android:background="#E91E63"
+            android:backgroundTint="@color/cardview_dark_background"
+            app:layout_constraintBottom_toBottomOf="@+id/tvBankaAdi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvBankaAdi">
+
+            <TextView
+                android:id="@+id/tvBankaAdi"
+                android:layout_width="232dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/teal_200"
+                android:text="Samantha Oldsen"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/iban"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginBottom="16dp"
+                android:text="LOREM BANK ....8976"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             app:cardBackgroundColor="@color/cardview_dark_background"
             app:cardCornerRadius="30dp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="85dp"
-                android:background="#E91E63"
-                android:backgroundTint="@color/cardview_dark_background"
-                app:layout_constraintBottom_toBottomOf="@+id/tvBankaAdi"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvBankaAdi">
-
-                <TextView
-                    android:id="@+id/tvBankaAdi"
-                    android:layout_width="232dp"
-                    android:layout_height="33dp"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="16dp"
-                    android:backgroundTint="@color/teal_200"
-                    android:text="Samantha Oldsen"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/iban"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginBottom="16dp"
-                    android:text="LOREM BANK ....8976"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
 
@@ -124,8 +134,8 @@
         android:layout_width="405dp"
         android:layout_height="117dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="77dp"
-        android:layout_marginEnd="1dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="199dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
@@ -166,35 +176,40 @@
                     android:id="@+id/ibanno"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="$5,631.00"
+                    android:layout_marginStart="33dp"
+                    android:layout_marginTop="13dp"
+                    android:text="₺5,631.00"
                     android:textColor="@color/white"
                     android:textSize="24sp"
-                    tools:layout_editor_absoluteX="33dp"
-                    tools:layout_editor_absoluteY="55dp" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bankaAdi" />
 
                 <TextView
                     android:id="@+id/bankaAdi"
                     android:layout_width="77dp"
                     android:layout_height="31dp"
-                    android:text="GT Bank"
+                    android:layout_marginStart="33dp"
+                    android:layout_marginTop="11dp"
+                    android:text="Bank"
                     android:textColor="@color/white"
                     android:textSize="20sp"
-                    tools:layout_editor_absoluteX="33dp"
-                    tools:layout_editor_absoluteY="11dp" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
 
-    <include
-        android:id="@+id/include2"
-        layout="@layout/ust_menu"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="14dp"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="405dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_tasarim" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

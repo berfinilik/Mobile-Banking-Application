@@ -5,8 +5,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-
-
 @HiltViewModel
 class SendMoneyViewModel @Inject constructor() :  ViewModel() {
     private val mAuth = FirebaseAuth.getInstance()

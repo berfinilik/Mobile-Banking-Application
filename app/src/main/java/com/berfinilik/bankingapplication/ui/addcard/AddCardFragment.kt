@@ -11,7 +11,6 @@ class AddCardFragment : Fragment() {
 
     private  var _binding:FragmentAddCardBinding?=null
     private val binding get() = _binding!!
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding=FragmentAddCardBinding.inflate(inflater,container,false)
         return binding.root

@@ -6,15 +6,16 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.berfinilik.bankingapplication.ui.login.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        android:name="com.berfinilik.bankingapplication.ui.sign.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" />
 
     <fragment
         android:id="@+id/homePageFragment"
         android:name="com.berfinilik.bankingapplication.ui.homepage.HomePageFragment"
         android:label="fragment_home_page"
         tools:layout="@layout/fragment_home_page" />
+
 
     <fragment
         android:id="@+id/cardManagementFragment"
@@ -34,6 +35,20 @@
         android:label="fragment_send_money"
         tools:layout="@layout/fragment_send_money" />
 
+
+    <fragment
+        android:id="@+id/userSettingsFragment"
+        android:name="com.berfinilik.bankingapplication.ui.usersettings.UserSettingsFragment"
+        android:label="fragment_user_settings"
+        tools:layout="@layout/fragment_user_settings" />
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.berfinilik.bankingapplication.ui.sign.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" />
+
+
     <action
         android:id="@+id/action_loginFragment_to_homePageFragment"
         app:destination="@id/homePageFragment" />
@@ -42,4 +57,9 @@
         android:id="@+id/action_homePageFragment_to_cardManagementFragment"
         app:destination="@id/cardManagementFragment" />
 
+    <action
+        android:id="@+id/action_loginFragment_to_signUpFragment"
+        app:destination="@id/signUpFragment" />
+
 </navigation>
+

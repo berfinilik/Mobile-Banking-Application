@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.berfinilik.bankingapplication.databinding.FragmentUserSettingsBinding
-
 class UserSettingsFragment : Fragment() {
 
     private  var _binding: FragmentUserSettingsBinding?=null

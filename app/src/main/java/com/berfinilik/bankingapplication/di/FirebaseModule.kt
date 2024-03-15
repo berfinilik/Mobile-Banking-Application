@@ -1,6 +1,5 @@
 package com.berfinilik.bankingapplication.di
 
-
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
