@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.berfinilik.bankingapplication.databinding.FragmentAddCardBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AddCardFragment : Fragment() {
 
     private  var _binding:FragmentAddCardBinding?=null

@@ -9,6 +9,9 @@ import android.widget.Button
 import android.widget.EditText
 import com.berfinilik.bankingapplication.databinding.FragmentSendMoneyBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
 
 class SendMoneyFragment : Fragment() {
 

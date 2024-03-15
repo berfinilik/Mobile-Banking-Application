@@ -6,9 +6,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class SignInViewModel @Inject constructor(
-    private val auth: FirebaseAuth
-) : ViewModel() {
+class SignInViewModel @Inject constructor(private val auth: FirebaseAuth) : ViewModel() {
 
     fun loginUser(eMail: String, password: String): Boolean {
         return try {

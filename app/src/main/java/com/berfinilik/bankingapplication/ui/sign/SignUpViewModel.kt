@@ -6,7 +6,9 @@ import androidx.lifecycle.ViewModel
 import com.berfinilik.bankingapplication.ui.UserInfo.Address
 import com.google.firebase.auth.FirebaseAuth
 import javax.inject.Inject
+import dagger.hilt.android.lifecycle.HiltViewModel
 
+@HiltViewModel
 class SignUpViewModel @Inject constructor(private val auth: FirebaseAuth) : ViewModel() {
     private val _newAddress = MutableLiveData<Address>()
     val newAddress: LiveData<Address> = _newAddress

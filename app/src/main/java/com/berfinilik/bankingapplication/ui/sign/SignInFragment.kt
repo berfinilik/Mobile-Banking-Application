@@ -1,4 +1,5 @@
 package com.berfinilik.bankingapplication.ui.sign
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.berfinilik.bankingapplication.R
 import com.berfinilik.bankingapplication.databinding.FragmentSignInBinding
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
 
 class SignInFragment : Fragment() {
     private var _binding: FragmentSignInBinding? = null
@@ -44,10 +48,6 @@ class SignInFragment : Fragment() {
             findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
         }
     }
-
-
-
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

@@ -15,6 +15,10 @@ import androidx.fragment.app.viewModels
 import com.berfinilik.bankingapplication.R
 import com.berfinilik.bankingapplication.databinding.FragmentSignUpBinding
 import com.berfinilik.bankingapplication.ui.UserInfo.Address
+import dagger.hilt.android.AndroidEntryPoint
+
+
+@AndroidEntryPoint
 
 class SignUpFragment : Fragment() {
 

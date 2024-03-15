@@ -8,8 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.berfinilik.bankingapplication.R
 import com.berfinilik.bankingapplication.databinding.FragmentCardManagementBinding
-import com.berfinilik.bankingapplication.ui.cardmanagement.CardManagementAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CardManagementFragment : Fragment(), CardManagementAdapter.OnItemClickListener {
     private var _binding: FragmentCardManagementBinding? = null
     private val binding get() = _binding!!
