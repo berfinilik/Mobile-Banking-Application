@@ -1,5 +1,6 @@
 package com.berfinilik.bankingapplication.ui.sign
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -8,12 +9,20 @@ import javax.inject.Inject
 @HiltViewModel
 class SignInViewModel @Inject constructor(private val auth: FirebaseAuth) : ViewModel() {
 
-    fun loginUser(eMail: String, password: String): Boolean {
-        return try {
-            val result = auth.signInWithEmailAndPassword(eMail, password).isSuccessful
-            result
+    val loginResult: MutableLiveData<Boolean> = MutableLiveData()
+
+    fun loginUser(eMail: String, password: String) {
+        try {
+            auth.signInWithEmailAndPassword(eMail, password)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        loginResult.value = true
+                    } else {
+                        loginResult.value = false
+                    }
+                }
         } catch (e: Exception) {
-            false
+            loginResult.value = false
         }
     }
 
@@ -28,4 +37,3 @@ class SignInViewModel @Inject constructor(private val auth: FirebaseAuth) : View
             }
     }
 }
-

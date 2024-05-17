@@ -11,9 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.berfinilik.bankingapplication.R
 import com.berfinilik.bankingapplication.databinding.FragmentSignInBinding
 import dagger.hilt.android.AndroidEntryPoint
-
 @AndroidEntryPoint
-
 class SignInFragment : Fragment() {
     private var _binding: FragmentSignInBinding? = null
     private val binding get() = _binding!!
@@ -38,10 +36,14 @@ class SignInFragment : Fragment() {
             val ePosta = editTextEPosta.text.toString().trim()
             val password = editTextPassword.text.toString().trim()
 
-            if (viewModel.loginUser(ePosta, password)) {
-                findNavController().navigate(R.id.action_loginFragment_to_homePageFragment)
-            } else {
-               Toast.makeText(requireContext(),"Başarısız",Toast.LENGTH_LONG).show()
+            viewModel.loginUser(ePosta, password)
+
+            viewModel.loginResult.observe(viewLifecycleOwner) { loginSuccessful ->
+                if (loginSuccessful) {
+                    findNavController().navigate(R.id.action_loginFragment_to_homePageFragment)
+                } else {
+                    Toast.makeText(requireContext(), "Başarısız", Toast.LENGTH_LONG).show()
+                }
             }
         }
         buttonSignUp.setOnClickListener {

@@ -1,35 +1,63 @@
 package com.berfinilik.bankingapplication.ui.sign
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.berfinilik.bankingapplication.ui.UserInfo.Address
 import com.google.firebase.auth.FirebaseAuth
-import javax.inject.Inject
+import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+
 
 @HiltViewModel
-class SignUpViewModel @Inject constructor(private val auth: FirebaseAuth) : ViewModel() {
-    private val _newAddress = MutableLiveData<Address>()
-    val newAddress: LiveData<Address> = _newAddress
+class SignUpViewModel @Inject constructor(private val auth: FirebaseAuth,private val firestore: FirebaseFirestore) : ViewModel() {
 
-    fun createAddress(address: Address) {
-        _newAddress.value = address
-    }
+    val signUpResult: MutableLiveData<Boolean> = MutableLiveData()
+
+
 
     fun signUpUser(
-        userName:String,
-        userMail: String,
-        userPass: String,
-        userPhone: String,
-        address: String,
-        job1: String
+        email: String,
+        password: String,
+        ad: String,
+        soyad: String,
+        cinsiyet: String,
+        telefonNumarasi: String
     ) {
+        try {
+            auth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
 
-        auth.createUserWithEmailAndPassword(userMail, userPass).addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                 } else {
-                 }
-             }
+                        val user = hashMapOf(
+                            "Ad" to ad,
+                            "Soyad" to soyad,
+                            "Cinsiyet" to cinsiyet,
+                            "E-posta adresi" to email,
+                            "Telefon Numarası" to telefonNumarasi
+                        )
+
+                        firestore.collection("users")
+                            .document(auth.currentUser!!.uid)
+                            .set(user)
+                            .addOnSuccessListener {
+                                signUpResult.value = true
+                            }
+                            .addOnFailureListener { e ->
+                                signUpResult.value = false
+                                println("Error adding document: $e")
+                            }
+                    }
+                    else {
+                        signUpResult.value = false
+                    }
+                }
+
+        } catch (e: Exception) {
+            signUpResult.value = false
+        }
     }
+
+
+
+
 }

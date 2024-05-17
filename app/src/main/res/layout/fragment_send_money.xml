@@ -2,18 +2,55 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".ui.sendmoney.SendMoneyFragment"
-    tools:menu="@menu/menu_tasarim">
+    tools:context=".ui.sendmoney.SendMoneyFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/back" />
+
+        <TextView
+            android:id="@+id/textViewCardOwner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="15dp"
+            android:text="PARA GÖNDER"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.355"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/buttonTransfer"
-        android:layout_width="356dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="28dp"
+        android:layout_width="239dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="90dp"
         android:background="@drawable/custom_button_background"
         android:backgroundTint="@color/white"
         android:text="TRANSFER"
@@ -26,125 +63,141 @@
 
     <EditText
         android:id="@+id/editTextTransferMiktari"
-        android:layout_width="226dp"
-        android:layout_height="81dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="222dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="30dp"
         android:ems="10"
         android:hint="₺"
         android:inputType="numberDecimal"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textColorHint="@color/cardview_dark_background"
         android:textSize="55sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonTransfer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/aliciCardView" />
+
 
     <ImageView
-        android:id="@+id/imageViewKisi"
-        android:layout_width="84dp"
-        android:layout_height="84dp"
-        android:layout_marginTop="200dp"
-        android:scaleType="centerInside"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_user" />
-
-
-    <TextView
-        android:id="@+id/textViewKisi"
-        android:layout_width="wrap_content"
+        android:id="@+id/iv_alici"
+        android:layout_width="137dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="90dp"
-        android:text="Samantha Oldsen"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="147dp"
+        android:scaleType="centerInside"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewKisi" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        tools:src="@drawable/ic_launcher_background" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/aliciCardView"
         android:layout_width="359dp"
         android:layout_height="71dp"
-        android:layout_marginStart="2dp"
+        android:layout_marginTop="19dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="250dp"
         android:background="#191818"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardCornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textViewKisi">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="362dp"
-            android:layout_height="76dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="#E91E63"
+
             android:backgroundTint="@color/cardview_dark_background"
-            app:layout_constraintBottom_toBottomOf="@+id/tvBankaAdi"
+            app:layout_constraintBottom_toBottomOf="@+id/aliciAdSoyad"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvBankaAdi">
+            app:layout_constraintTop_toBottomOf="@+id/aliciAdSoyad">
+
+            <EditText
+                android:id="@+id/editTextAliciAdSoyad"
+                android:layout_width="186dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="136dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="37dp"
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editTextAliciIban"
+                android:layout_width="185dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="12dp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextAliciAdSoyad" />
 
             <TextView
-                android:id="@+id/tvBankaAdi"
-                android:layout_width="232dp"
-                android:layout_height="33dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@color/teal_200"
-                android:text="Samantha Oldsen"
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="12dp"
+                android:text="Alıcı Adı Soyadı:"
                 android:textColor="@color/white"
-                android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/iban"
+                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
+                android:layout_marginStart="59dp"
                 android:layout_marginBottom="16dp"
-                android:text="LOREM BANK ....8976"
+                android:text="Alıcı IBANI:"
                 android:textColor="@color/white"
-                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="@color/cardview_dark_background"
+                app:cardCornerRadius="30dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="27dp">
+
+            </androidx.cardview.widget.CardView>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            app:cardBackgroundColor="@color/cardview_dark_background"
-            app:cardCornerRadius="30dp">
-
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="405dp"
-        android:layout_height="117dp"
+        android:layout_width="369dp"
+        android:layout_height="113dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="130dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="199dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/aliciCardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="389dp"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             app:cardBackgroundColor="@color/cardview_dark_background"
@@ -155,61 +208,66 @@
                 android:layout_height="match_parent"
                 android:background="#E91E63"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent">
 
                 <TextView
-                    android:id="@+id/textView13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="48dp"
+                    android:id="@+id/gondericiHesapBakiyesi"
+                    android:layout_width="71dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="24dp"
                     android:layout_marginBottom="60dp"
-                    android:text="....1226"
+                    android:hint="₺"
                     android:textColor="@color/white"
-                    android:textSize="20sp"
+                    android:textColorHint="@color/white"
+                    android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
-                    android:id="@+id/ibanno"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/gondericiAdSoyad"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="33dp"
-                    android:layout_marginTop="13dp"
-                    android:text="₺5,631.00"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/bankaAdi" />
-
-                <TextView
-                    android:id="@+id/bankaAdi"
-                    android:layout_width="77dp"
-                    android:layout_height="31dp"
-                    android:layout_marginStart="33dp"
-                    android:layout_marginTop="11dp"
-                    android:text="Bank"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="25dp"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/gondericiIban"
+                    android:layout_width="218dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="104dp"
+                    android:layout_marginBottom="15dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="405dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+    <TextView
+        android:id="@+id/textViewKisi"
+        android:layout_width="201dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="33dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/aliciCardView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/menu_tasarim" />
-
+        app:layout_constraintTop_toBottomOf="@+id/iv_alici" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

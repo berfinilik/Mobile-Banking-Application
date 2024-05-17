@@ -11,23 +11,50 @@
         tools:layout="@layout/fragment_sign_in" />
 
     <fragment
+        android:id="@+id/cardFragment"
+        android:name="com.berfinilik.bankingapplication.ui.cardmanagement.CardFragment"
+        android:label="Card Fragment"
+        tools:layout="@layout/fragment_card">
+    </fragment>
+
+    <fragment
+        android:id="@+id/bankCardFragment"
+        android:name="com.berfinilik.bankingapplication.ui.cardmanagement.BankCardFragment"
+        android:label="Bank Card Fragment"
+        tools:layout="@layout/fragment_bank_card" />
+    <fragment
+        android:id="@+id/creditCardFragment"
+        android:name="com.berfinilik.bankingapplication.ui.cardmanagement.CreditCardFragment"
+        android:label="Credit Card Fragment"
+        tools:layout="@layout/fragment_credit_card" />
+
+
+    <fragment
         android:id="@+id/homePageFragment"
         android:name="com.berfinilik.bankingapplication.ui.homepage.HomePageFragment"
         android:label="fragment_home_page"
         tools:layout="@layout/fragment_home_page" />
 
+    <fragment
+        android:id="@+id/kampanyalarFragment"
+        android:name="com.berfinilik.bankingapplication.ui.kampanyalar.KampanyalarFragment"
+        android:label="fragment_kampanyalar"
+        tools:layout="@layout/fragment_kampanyalar" />
 
     <fragment
         android:id="@+id/cardManagementFragment"
-        android:name="com.berfinilik.bankingapplication.ui.cardmanagement.CardManagementFragment"
-        android:label="fragment_card_management"
-        tools:layout="@layout/fragment_card_management" />
+        android:name="com.berfinilik.bankingapplication.ui.cardmanagement.CardFragment"
+        android:label="fragment_card"
+        tools:layout="@layout/fragment_card" />
 
     <fragment
-        android:id="@+id/addCardFragment"
-        android:name="com.berfinilik.bankingapplication.ui.addcard.AddCardFragment"
-        android:label="fragment_add_card"
-        tools:layout="@layout/fragment_add_card" />
+        android:id="@+id/borclarimFragment"
+        android:name="com.berfinilik.bankingapplication.ui.borclar.BorclarimFragment"
+        android:label="fragment_borclarim"
+        tools:layout="@layout/fragment_borclarim" />
+
+
+
 
     <fragment
         android:id="@+id/sendMoneyFragment"
@@ -38,9 +65,9 @@
 
     <fragment
         android:id="@+id/userSettingsFragment"
-        android:name="com.berfinilik.bankingapplication.ui.usersettings.UserSettingsFragment"
+        android:name="com.berfinilik.bankingapplication.ui.profile.ProfileFragment"
         android:label="fragment_user_settings"
-        tools:layout="@layout/fragment_user_settings" />
+        tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/signUpFragment"
@@ -48,18 +75,57 @@
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" />
 
+    <fragment
+        android:id="@+id/varliklarimFragment"
+        android:name="com.berfinilik.bankingapplication.ui.varliklar.VarliklarimFragment"
+        android:label="fragment_varliklarim"
+        tools:layout="@layout/fragment_varliklarim" />
+
 
     <action
         android:id="@+id/action_loginFragment_to_homePageFragment"
         app:destination="@id/homePageFragment" />
 
     <action
-        android:id="@+id/action_homePageFragment_to_cardManagementFragment"
-        app:destination="@id/cardManagementFragment" />
+        android:id="@+id/action_homePageFragment_to_kampanyalarFragment"
+        app:destination="@id/kampanyalarFragment" />
 
     <action
         android:id="@+id/action_loginFragment_to_signUpFragment"
         app:destination="@id/signUpFragment" />
+
+    <action
+        android:id="@+id/actionHomePageFragmentToSendMoneyFragment"
+        app:destination="@id/sendMoneyFragment" />
+
+    <action
+        android:id="@+id/action_signUpFragment_to_loginFragment"
+        app:destination="@id/loginFragment" />
+
+    <action
+        android:id="@+id/actionSendMoneyFragmentToHomePageFragment"
+        app:destination="@id/homePageFragment" />
+
+    <action
+        android:id="@+id/action_cardFragment_to_bankCardFragment"
+        app:destination="@id/bankCardFragment" />
+
+    <action
+        android:id="@+id/actionHomePageFragmentToVarliklarimFragment"
+        app:destination="@id/varliklarimFragment" />
+
+    <action
+        android:id="@+id/action_cardFragment_to_creditCardFragment"
+        app:destination="@id/creditCardFragment" />
+
+
+    <action
+        android:id="@+id/actionHomePageFragmentToBorclarimFragment"
+        app:destination="@id/borclarimFragment" />
+
+
+
+
 
 </navigation>
 

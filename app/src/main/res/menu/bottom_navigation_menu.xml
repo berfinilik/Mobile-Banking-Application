@@ -4,23 +4,23 @@
 
     <item
         android:id="@+id/homePageFragment"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/bottom_btn1"
         tools:ignore="MenuTitle" />
 
     <item
-        android:id="@+id/cardManagementFragment"
-        android:icon="@drawable/ic_credit_card"
-        tools:ignore="MenuTitle"/>
-    <item
-        android:icon="@drawable/ic_quickmenu"
-        tools:ignore="MenuTitle"/>
-    <item
-        android:id="@+id/sendMoneyFragment"
-        android:icon="@drawable/ic_transaction"
-        tools:ignore="MenuTitle"/>
-    <item
         android:id="@+id/userSettingsFragment"
-        android:icon="@drawable/ic_admin"
+        android:icon="@drawable/bottom_btn2"
+        tools:ignore="MenuTitle"/>
+    <item
+        android:icon="@drawable/float_icon"
+        tools:ignore="MenuTitle"/>
+    <item
+        android:id="@+id/cardManagementFragment"
+        android:icon="@drawable/bottom_btn3"
+        tools:ignore="MenuTitle"/>
+    <item
+        android:id="@+id/kampanyalarFragment"
+        android:icon="@drawable/bottom_btn4"
         tools:ignore="MenuTitle"/>
 
 </menu>

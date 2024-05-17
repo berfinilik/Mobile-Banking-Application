@@ -7,6 +7,33 @@
     tools:context=".ui.sign.SignUpFragment">
 
     <LinearLayout
+        android:id="@+id/layout_user_id_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_user_name_sign_up">
+
+        <ImageView
+            android:id="@+id/iv_user_surname"
+            android:layout_width="38dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/name"></ImageView>
+
+        <EditText
+            android:id="@+id/edittext_surname_sign_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="SOYAD"></EditText>
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/layout_user_name_sign_up"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,10 +61,10 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/layout_user_id_sign_up"
+        android:id="@+id/layout_user_email_sign_up"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="80dp"
         android:orientation="horizontal"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
@@ -46,28 +73,32 @@
         app:layout_constraintTop_toBottomOf="@id/layout_user_name_sign_up">
 
         <ImageView
-            android:id="@+id/iv_id_number"
+            android:id="@+id/iv_email"
             android:layout_width="38dp"
             android:layout_height="match_parent"
             android:src="@drawable/ic_mail"></ImageView>
 
         <EditText
-            android:id="@+id/edittext_mail_sign_up"
+            android:id="@+id/edittext_email_sign_up"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:hint="E-MAİL"></EditText>
     </LinearLayout>
 
+
     <LinearLayout
         android:id="@+id/layout_user_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="20dp"
         android:orientation="horizontal"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/layout_phone_sign_up"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layout_user_id_sign_up">
 
@@ -83,10 +114,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="ŞİFRE"
+            android:hint="PAROLA"
             android:inputType="textPassword"></EditText>
     </LinearLayout>
-
 
     <LinearLayout
         android:id="@+id/layout_phone_sign_up"
@@ -97,6 +127,7 @@
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layout_user_password">
 
@@ -117,9 +148,8 @@
             android:inputType="numberDecimal"></EditText>
     </LinearLayout>
 
-
     <LinearLayout
-        android:id="@+id/layout_address_sign_up"
+        android:id="@+id/layout_cinsiyet_sign_up"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -127,79 +157,57 @@
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_phone_sign_up">
+        app:layout_constraintTop_toBottomOf="@+id/layout_phone_sign_up">
 
         <ImageView
-            android:id="@+id/iv_address"
+            android:id="@+id/iv_cinsiyet"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:src="@drawable/ic_address"></ImageView>
+            android:src="@drawable/gender"></ImageView>
 
-        <TextView
-            android:id="@+id/tvAdres"
+
+        <RadioGroup
+            android:id="@+id/radio_group_cinsiyet"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/white"
-            android:backgroundTint="@color/white"
-            android:gravity="center"
-            android:onClick="createAddress"
-            android:text="ADRES"
-            android:textSize="18sp" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
+            <RadioButton
+                android:id="@+id/radio_erkek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Erkek" />
 
+            <RadioButton
+                android:id="@+id/radio_kadin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kadın" />
+        </RadioGroup>
     </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/layout_profession_sign_up"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_address_sign_up">
-
-        <ImageView
-            android:id="@+id/iv_profession"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:src="@drawable/ic_profession"></ImageView>
-
-        <Spinner
-            android:id="@+id/jobSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-
-    </LinearLayout>
-
 
     <Button
         android:id="@+id/button_sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="120dp"
         android:backgroundTint="@color/black"
         android:onClick="signUp"
         android:text="KAYIT OL"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.548"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_profession_sign_up"></Button>
+        app:layout_constraintStart_toStartOf="parent"></Button>
 
     <ImageView
         android:id="@+id/iv_bank_sign_up"
         android:layout_width="84dp"
         android:layout_height="84dp"
         android:layout_marginStart="170dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="157dp"
         android:layout_marginBottom="16dp"
         android:src="@drawable/ic_bank"
@@ -218,7 +226,7 @@
         android:layout_marginBottom="19dp"
         android:text="KAYIT OL"
         android:textColor="@color/black"
-        android:textSize="40dp"
+        android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/layout_user_name_sign_up"
         app:layout_constraintEnd_toEndOf="parent"
