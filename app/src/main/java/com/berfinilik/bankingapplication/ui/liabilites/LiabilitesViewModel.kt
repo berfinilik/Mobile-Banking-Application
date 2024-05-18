@@ -1,4 +1,4 @@
-package com.berfinilik.bankingapplication.ui.borclar
+package com.berfinilik.bankingapplication.ui.liabilites
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -9,7 +9,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class BorclarimViewModel @Inject constructor() : ViewModel() {
+class LiabilitesViewModel @Inject constructor() : ViewModel() {
 
     private val _kartNumarasi = MutableLiveData<String>()
     val kartNumarasi: LiveData<String> get() = _kartNumarasi

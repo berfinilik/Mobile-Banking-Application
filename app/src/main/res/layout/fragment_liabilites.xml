@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.borclar.BorclarimFragment">
+    tools:context=".ui.liabilites.BorclarimFragment">
 
     <LinearLayout
         android:id="@+id/linearLayoutBorclar"
@@ -113,8 +113,8 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginBottom="30dp"
                 android:text="%100"
-                android:textColor="@android:color/holo_blue_light"
-                android:textSize="16sp"  />
+                android:textColor="@color/teal_200"
+                android:textSize="16sp" />
         </androidx.cardview.widget.CardView>
 
 

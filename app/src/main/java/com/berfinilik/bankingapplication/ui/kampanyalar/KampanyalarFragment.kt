@@ -56,7 +56,7 @@ class KampanyalarFragment : Fragment() {
             viewModel.selectKampanya(
                 KampanyaModel(
                     "EFT/FAST işlemlerinde %50 indirim",
-                    "İnternet ve mobil bankacılıktan gerçekleştirilen EFT/FAST işlem masraflarında %50 oranında indirim yapılmaktadır",
+                    "İnternet ve mobil bankacılıktan gerçekleştirilen EFT/FAST işlem masraflarında %50 oranında indirim yapılmaktadır.",
                     R.drawable.yuzdeellindirim
                 )
             )
@@ -92,7 +92,7 @@ class KampanyalarFragment : Fragment() {
             viewModel.selectKampanya(
                 KampanyaModel(
                     "Aidatsız Kredi Kartı",
-                    "Süper Şube müşterilerine kart aidatı (ek kartlar dahil) yansıtılmamaktadır",
+                    "Süper Şube müşterilerine kart aidatı (ek kartlar dahil) yansıtılmamaktadır.",
                     R.drawable.aidatsizkredikarti
                 )
             )
@@ -102,7 +102,7 @@ class KampanyalarFragment : Fragment() {
                 KampanyaModel(
                     "Kart işlemlerini sonradan taksitlendirme imkanı",
                     "Kredi kartından yapılan işlemlerde 4 taksite kadar ücretsiz sonradan taksitlendirme yapılabilmektedir.",
-                    R.drawable.taksitlendirme
+                    R.drawable.taksit
                 )
             )
         }
@@ -111,12 +111,10 @@ class KampanyalarFragment : Fragment() {
                 KampanyaModel(
                     "Tüm kamu ATM'leri işlem limitleri dahilinde masrafsız!",
                     "Tüm kamu ATM'lerinde işlem limitleri dahilinde para çekme ve para yatırma işlemlerinden masraf alınmamaktadır.",
-                    R.drawable.atmlerlimitdahilimasrafsiz
+                    R.drawable.atm
                 )
             )
         }
-
-        // Diğer card view'ları buraya ekleyebilirsiniz
     }
 
     private fun showCustomDialog(title: String, message: String, imageResId: Int) {

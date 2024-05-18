@@ -87,8 +87,8 @@ class CreditCardFragment : Fragment() {
                         val kullanilabilirLimit = document.getDouble("Kullanılabilir Limit")
 
                         binding.creditCardNo.text = kartNumarasi
-                        binding.toplamLimit.text = "Toplam Limit: ${toplamLimit.toString()}"
-                        binding.kullanilabilirLimit.text = "Kalan Limit: ${kullanilabilirLimit.toString()}"
+                        binding.toplamLimit.text = "Toplam Limit: ${toplamLimit.toString()} TL"
+                        binding.kullanilabilirLimit.text = "Kalan Limit: ${kullanilabilirLimit.toString()} TL"
                     } else {
                         showDialog("Kredi kartı bulunamadı.")
                     }

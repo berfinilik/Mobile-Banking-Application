@@ -12,7 +12,6 @@
         android:icon="@drawable/bottom_btn2"
         tools:ignore="MenuTitle"/>
     <item
-        android:icon="@drawable/float_icon"
         tools:ignore="MenuTitle"/>
     <item
         android:id="@+id/cardManagementFragment"

@@ -26,7 +26,6 @@ class BankCardFragment : Fragment() {
         _binding = FragmentBankCardBinding.inflate(inflater, container, false)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -35,13 +34,11 @@ class BankCardFragment : Fragment() {
                 Toast.makeText(context, "Tanımlı banka kartınız bulunmamaktadır.", Toast.LENGTH_SHORT).show()
             } else {
                 binding.cardNo.text = userData.kartNo
-                binding.bakiye.text = "Kullanılabilir Bakiye: ${userData.hesapBakiyesi}"
+                binding.bakiye.text = "Kullanılabilir Bakiye: ${userData.hesapBakiyesi} TL"
             }
         })
-
         viewModel.loadUserData()
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

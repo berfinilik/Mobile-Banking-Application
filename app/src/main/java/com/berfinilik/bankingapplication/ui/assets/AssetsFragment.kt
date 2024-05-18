@@ -1,4 +1,4 @@
-package com.berfinilik.bankingapplication.ui.varliklar
+package com.berfinilik.bankingapplication.ui.assets
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,21 +7,21 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import com.berfinilik.bankingapplication.databinding.FragmentVarliklarimBinding
+import com.berfinilik.bankingapplication.databinding.FragmentAssetsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class VarliklarimFragment : Fragment() {
-    private var _binding: FragmentVarliklarimBinding? = null
+class AssetsFragment : Fragment() {
+    private var _binding: FragmentAssetsBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: VarliklarimViewModel by viewModels()
+    private val viewModel: AssetsViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentVarliklarimBinding.inflate(inflater, container, false)
+        _binding = FragmentAssetsBinding.inflate(inflater, container, false)
         return binding.root
     }
 

@@ -7,43 +7,38 @@
     android:layout_height="match_parent"
     tools:context=".ui.sendmoney.SendMoneyFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical" />
+
+    <ImageView
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/back" />
 
-        <ImageView
-            android:id="@+id/backBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/back" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF4081"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="PARA GÖNDER"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
 
-        <TextView
-            android:id="@+id/textViewCardOwner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="15dp"
-            android:text="PARA GÖNDER"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.355"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.355"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonTransfer"
@@ -83,15 +78,15 @@
 
     <ImageView
         android:id="@+id/iv_alici"
-        android:layout_width="137dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="147dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="73dp"
+        android:layout_marginEnd="165dp"
         android:scaleType="centerInside"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        tools:src="@drawable/ic_launcher_background" />
+        tools:src="@drawable/ic_user" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/aliciCardView"
@@ -134,15 +129,13 @@
 
             <EditText
                 android:id="@+id/editTextAliciIban"
-                android:layout_width="185dp"
-                android:layout_height="22dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="36dp"
-                android:layout_marginBottom="12dp"
+                android:layout_width="186dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="37dp"
                 android:background="@color/white"
                 android:textColor="@color/black"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editTextAliciAdSoyad" />
 
@@ -162,11 +155,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="59dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="16dp"
                 android:text="Alıcı IBANI:"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
@@ -259,7 +254,7 @@
         android:layout_height="35dp"
         android:layout_marginStart="200dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="116dp"
+        android:layout_marginEnd="100dp"
         android:layout_marginBottom="33dp"
         android:gravity="center"
         android:textColor="@color/black"

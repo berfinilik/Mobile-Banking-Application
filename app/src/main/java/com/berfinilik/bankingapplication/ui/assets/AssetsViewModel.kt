@@ -1,4 +1,4 @@
-package com.berfinilik.bankingapplication.ui.varliklar
+package com.berfinilik.bankingapplication.ui.assets
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -9,7 +9,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class VarliklarimViewModel @Inject constructor() : ViewModel() {
+class AssetsViewModel @Inject constructor() : ViewModel() {
     private val _hesapBakiyesi = MutableLiveData<Double>()
     val hesapBakiyesi: LiveData<Double> get() = _hesapBakiyesi
 

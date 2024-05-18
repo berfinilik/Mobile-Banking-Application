@@ -66,7 +66,6 @@ class ProfileFragment : Fragment() {
                     textViewAdSoyad.text = fullName
                     textViewEMail.text = user.email
                     textViewBakiye.text = user.phoneNumber
-                    tvUserId.text = user.uid
                 }
             }
         })

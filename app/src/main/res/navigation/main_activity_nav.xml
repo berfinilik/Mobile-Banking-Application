@@ -49,9 +49,9 @@
 
     <fragment
         android:id="@+id/borclarimFragment"
-        android:name="com.berfinilik.bankingapplication.ui.borclar.BorclarimFragment"
+        android:name="com.berfinilik.bankingapplication.ui.liabilites.BorclarimFragment"
         android:label="fragment_borclarim"
-        tools:layout="@layout/fragment_borclarim" />
+        tools:layout="@layout/fragment_liabilites" />
 
 
 
@@ -77,9 +77,9 @@
 
     <fragment
         android:id="@+id/varliklarimFragment"
-        android:name="com.berfinilik.bankingapplication.ui.varliklar.VarliklarimFragment"
+        android:name="com.berfinilik.bankingapplication.ui.assets.AssetsFragment"
         android:label="fragment_varliklarim"
-        tools:layout="@layout/fragment_varliklarim" />
+        tools:layout="@layout/fragment_assets" />
 
 
     <action

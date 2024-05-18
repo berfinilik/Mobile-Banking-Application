@@ -1,5 +1,6 @@
 package com.berfinilik.bankingapplication.ui.homepage
 
+import android.app.AlertDialog
 import android.content.ContentValues
 import android.os.Bundle
 import android.util.Log
@@ -16,6 +17,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.berfinilik.bankingapplication.Adapter.ContactAdapter
 import com.berfinilik.bankingapplication.R
 import com.berfinilik.bankingapplication.databinding.FragmentHomePageBinding
+import com.berfinilik.bankingapplication.ui.sign.SignInFragment
+import com.berfinilik.bankingapplication.ui.sign.SignUpFragment
+import com.bumptech.glide.Glide
+import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.AndroidEntryPoint
@@ -45,6 +50,8 @@ class HomePageFragment : Fragment() {
 
 
 
+
+
         binding.ivSend.setOnClickListener {
             findNavController().navigate(R.id.actionHomePageFragmentToSendMoneyFragment)
         }
@@ -69,7 +76,7 @@ class HomePageFragment : Fragment() {
         binding.ivBorclar.setColorFilter(ContextCompat.getColor(requireContext(), android.R.color.white))
 
         binding.viewFreeze.setOnClickListener {
-            freezeAccount()
+            showFreezeAccountDialog()
         }
 
         val currentUser = FirebaseAuth.getInstance().currentUser
@@ -84,10 +91,14 @@ class HomePageFragment : Fragment() {
                         val hesapBakiyesi = document.getDouble("Hesap Bakiyesi") ?: 0L
                         val kartnumarasi = document.getString("Kart Numarası") ?: ""
                         val kartGecerlilikSuresi=document.getString("kart son kullanma tarihi")?:""
+                        val picUrl=document.getString("picUrl")?: ""
+
                         binding.textViewCardOwner.setText(fullName)
                         binding.textViewBakiye.setText(hesapBakiyesi.toString()+"TL")
                         binding.textViewKartNumarasi.setText(kartnumarasi)
                         binding.textViewSonTarih.setText(kartGecerlilikSuresi)
+                        binding.textView3.setText("Hoşgeldiniz " +fullName)
+                        Glide.with(requireContext()).load(picUrl).into(binding.imageView8)
                     }
                 }
                 .addOnFailureListener { e ->
@@ -95,7 +106,19 @@ class HomePageFragment : Fragment() {
                 }
         }
     }
-
+    private fun showFreezeAccountDialog() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle("Hesabı Dondur")
+        builder.setMessage("Hesabınızı dondurmak istiyor musunuz?")
+        builder.setPositiveButton("Evet") { _, _ ->
+            freezeAccount()
+        }
+        builder.setNegativeButton("Hayır") { dialog, _ ->
+            dialog.dismiss()
+        }
+        val dialog = builder.create()
+        dialog.show()
+    }
     private fun setupRecyclerView() {
         contactAdapter = ContactAdapter(emptyList())
         binding.contactRecyclerView.apply {

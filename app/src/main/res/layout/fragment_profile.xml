@@ -7,34 +7,32 @@
 
     android:backgroundTint="@color/black">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF4081"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Bilgilerim"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
 
     <ImageView
         android:id="@+id/iv_user"
         android:layout_width="84dp"
         android:layout_height="84dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="160dp"
         android:src="@drawable/ic_user"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"></ImageView>
-
-    <TextView
-        android:id="@+id/tv_user_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="180dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="165dp"
-        android:gravity="center"
-        android:text="User Id"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_user" />
-
 
 
     <ScrollView
@@ -56,6 +54,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
@@ -63,33 +62,26 @@
                         android:id="@+id/constraintLayout2"
                         android:layout_width="match_parent"
                         android:layout_height="360dp"
+                        android:layout_marginTop="250dp"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="32dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/ic_launcher_background" />
-
                     <TextView
                         android:id="@+id/textViewAdSoyad"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="90dp"
+                        android:layout_marginTop="232dp"
                         android:textColor="@color/black"
                         android:textSize="20sp"
                         android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView"
-                        app:layout_constraintStart_toStartOf="@+id/imageView"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
                         android:id="@+id/imageView2"
@@ -99,25 +91,19 @@
                         app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                         />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:layout_marginTop="200dp"
-                        android:layout_marginEnd="24dp"
-                        android:layout_marginBottom="24dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="45dp"
                         android:background="@drawable/white_background"
                         android:elevation="3dp"
                         android:orientation="vertical"
                         android:paddingBottom="10dp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="1.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView">
+                        app:layout_constraintStart_toStartOf="parent">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -134,8 +120,9 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Şifre:"
-                                android:textColor="#182693"
-                                android:textSize="18sp" />
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
 
 
                             <TextView
@@ -171,8 +158,10 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="Telefon Numarası:"
-                                android:textColor="#182693"
-                                android:textSize="18sp" />
+                                android:textColor="@color/black"
+
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/textViewBakiye"
@@ -227,8 +216,10 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="E posta adresi:"
-                                android:textColor="#182693"
-                                android:textSize="18sp" />
+                                android:textColor="@color/black"
+
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/textViewEMail"
