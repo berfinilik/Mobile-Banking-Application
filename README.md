@@ -1,6 +1,6 @@
-Mobile Banking Application
+MOBILE BANKING APPLICATION
 
-Uygulama Yapısı->
+KULLANILAN TEKNOLOJİLER
 
 Firebase Authentication: Kullanıcı kimlik doğrulaması için kullanıldı.
 
@@ -16,7 +16,7 @@ Navigation Component: Sayfa geçişlerini yönetmek için kullanıldı.
 
 MVVM mimarisi kullanıldı.
 
-Ekran Görüntüleri ->
+EKRAN GÖRÜNTÜLERİ ->
 
 ![1adac08f-e107-4518-afc4-95003b2847bd](https://github.com/berfinilik/Mobile-Banking-Application/assets/140311905/89a5b9d7-1ac8-4d45-bd47-dc22a410cda0)
 ![9559a243-5ecb-4a17-b25b-a2d40a33a0da](https://github.com/berfinilik/Mobile-Banking-Application/assets/140311905/1688a893-ed27-483a-bc87-3a0d189b5d09)
