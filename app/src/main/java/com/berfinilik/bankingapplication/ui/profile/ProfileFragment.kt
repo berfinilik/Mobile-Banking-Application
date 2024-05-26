@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import com.berfinilik.bankingapplication.R
 import com.berfinilik.bankingapplication.databinding.FragmentProfileBinding
 import com.berfinilik.bankingapplication.utils.ChangeEmailDialog
 import com.berfinilik.bankingapplication.utils.ChangePasswordDialog
 import com.berfinilik.bankingapplication.utils.ChangePhoneNumberDialog
+import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -40,9 +42,10 @@ class ProfileFragment : Fragment() {
             changePasswordDialog.showDialog()
         }
         binding.textView510.setOnClickListener {
-            val ChangePhoneNumberDialog = ChangePhoneNumberDialog(requireContext()) { newPhoneNumber ->
-                viewModel.changePhoneNumber(newPhoneNumber)
-            }
+            val ChangePhoneNumberDialog =
+                ChangePhoneNumberDialog(requireContext()) { newPhoneNumber ->
+                    viewModel.changePhoneNumber(newPhoneNumber)
+                }
             ChangePhoneNumberDialog.showDialog()
         }
         binding.textView51.setOnClickListener {
@@ -66,6 +69,18 @@ class ProfileFragment : Fragment() {
                     textViewAdSoyad.text = fullName
                     textViewEMail.text = user.email
                     textViewBakiye.text = user.phoneNumber
+
+
+                    if (user.picUrl.isNotEmpty()) {
+                        // Glide kütüphanesi ile resmi yükle
+                        Glide.with(requireContext())
+                            .load(user.picUrl)
+                            .placeholder(R.drawable.ic_launcher_background) // Opsiyonel: Yükleme sırasında görüntülenecek yerel bir resim
+                            .into(ivUser)
+                    } else {
+                        // Eğer resim URL'si yoksa, varsayılan bir resmi yükle
+                        ivUser.setImageResource(R.drawable.ic_launcher_background)
+                    }
                 }
             }
         })

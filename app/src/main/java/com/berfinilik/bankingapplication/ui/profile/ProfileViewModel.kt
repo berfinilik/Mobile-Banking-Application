@@ -88,13 +88,14 @@ class ProfileViewModel @Inject constructor() : ViewModel() {
             userRef.get()
                 .addOnSuccessListener { document ->
                     if (document != null && document.exists()) {
+                        val picUrl=document.getString("picUrl")?:""
                         val name = document.getString("Ad") ?: ""
                         val surname = document.getString("Soyad") ?: ""
                         val email = user.email ?: ""
                         val phoneNumber = document.getString("Telefon Numarası") ?: ""
                         val uid = user.uid
 
-                        val user = Contact(name, surname, "", email, phoneNumber, "", "", uid)
+                        val user = Contact(name, surname, "", email, phoneNumber, picUrl, "", uid)
                         _userData.value = user
                     } else {
                         // Kullanıcı dokümanı bulunamadı veya yoksa yapılacak işlemler

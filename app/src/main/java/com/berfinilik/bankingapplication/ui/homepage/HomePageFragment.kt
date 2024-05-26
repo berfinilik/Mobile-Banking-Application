@@ -60,11 +60,11 @@ class HomePageFragment : Fragment() {
             findNavController().navigate(R.id.actionHomePageFragmentToSendMoneyFragment)
         }
         binding.ivVarliklarim.setOnClickListener {
-            findNavController().navigate(R.id.actionHomePageFragmentToVarliklarimFragment)
+            findNavController().navigate(R.id.actionHomePageFragmentToAssetsFragment)
         }
 
         binding.textViewVarliklarim.setOnClickListener {
-            findNavController().navigate(R.id.actionHomePageFragmentToVarliklarimFragment)
+            findNavController().navigate(R.id.actionHomePageFragmentToAssetsFragment)
         }
         binding.textViewBorclarim.setOnClickListener {
             findNavController().navigate(R.id.actionHomePageFragmentToLiabilitesFragment)
