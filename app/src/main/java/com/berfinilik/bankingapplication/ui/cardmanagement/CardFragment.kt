@@ -10,8 +10,6 @@ import com.berfinilik.bankingapplication.databinding.FragmentCardBinding
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.navigation.fragment.findNavController
 import com.berfinilik.bankingapplication.R
-
-
 @AndroidEntryPoint
 class CardFragment : Fragment() {
     private var _binding: FragmentCardBinding? = null
@@ -31,11 +29,8 @@ class CardFragment : Fragment() {
         binding.linearLayoutCreditCard.setOnClickListener {
             findNavController().navigate(R.id.action_cardFragment_to_creditCardFragment)
         }
-
-
         return binding.root
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

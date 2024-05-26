@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#FF4081"
+            android:background="#2D5CE8"
             android:gravity="center"
             android:padding="16dp"
             android:text="Varlıklarım"
@@ -86,13 +86,13 @@
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="30dp">
 
-            <ProgressBar
-                android:id="@+id/progressBar2"
-                style="?android:attr/progressBarStyle"
-                android:layout_width="354dp"
-                android:layout_height="match_parent"
-                android:indeterminate="false"
-                android:max="100" />
+
+            <com.berfinilik.bankingapplication.customview.CircleOutlineView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                tools:ignore="ExtraText" />
 
             <TextView
                 android:id="@+id/textViewToplamTutar"
@@ -109,10 +109,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|start"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginBottom="30dp"
                 android:text="%100"
-                android:textColor="@color/teal_200"
+                android:textColor="@color/blue"
                 android:textSize="16sp" />
         </androidx.cardview.widget.CardView>
 

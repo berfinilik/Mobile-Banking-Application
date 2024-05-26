@@ -1,237 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.sign.SignUpFragment">
+    android:gravity="center"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/layout_user_id_sign_up"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Kayıt Ol"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="Yeni hesap oluşturun" />
+
+    <EditText
+        android:id="@+id/edittext_id_name_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_back_dark_blue5_15"
+        android:hint="Ad"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/edittext_surname_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_user_name_sign_up">
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_back_dark_blue5_15"
+        android:hint="Soyad"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textSize="16sp" />
 
-        <ImageView
-            android:id="@+id/iv_user_surname"
-            android:layout_width="38dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/name"></ImageView>
-
-        <EditText
-            android:id="@+id/edittext_surname_sign_up"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="SOYAD"></EditText>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_user_name_sign_up"
+    <EditText
+        android:id="@+id/edittext_email_sign_up"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:orientation="horizontal"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_name_sign_up">
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_back_dark_blue5_15"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textSize="16sp" />
 
-        <ImageView
-            android:id="@+id/iv_user"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:src="@drawable/ic_user"></ImageView>
-
-        <EditText
-            android:id="@+id/edittext_id_name_sign_up"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="AD"></EditText>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_user_email_sign_up"
+    <EditText
+        android:id="@+id/edittext_phone_sign_up"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:orientation="horizontal"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_user_name_sign_up">
-
-        <ImageView
-            android:id="@+id/iv_email"
-            android:layout_width="38dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_mail"></ImageView>
-
-        <EditText
-            android:id="@+id/edittext_email_sign_up"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="E-MAİL"></EditText>
-    </LinearLayout>
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_back_dark_blue5_15"
+        android:hint="Telefon Numarası"
+        android:inputType="phone"
+        android:maxLines="1"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textSize="16sp" />
 
 
-    <LinearLayout
-        android:id="@+id/layout_user_password"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/layout_phone_sign_up"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_user_id_sign_up">
-
-        <ImageView
-            android:id="@+id/iv_password"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:src="@drawable/ic_password"></ImageView>
-
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_back_dark_blue5_15"
+        app:layout_constraintTop_toBottomOf="@+id/layout_user_password_sign_up">
 
         <EditText
             android:id="@+id/edittext_user_password_sign_up"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="PAROLA"
-            android:inputType="textPassword"></EditText>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_phone_sign_up"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_user_password">
-
-        <ImageView
-            android:id="@+id/iv_phone_number"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:src="@drawable/ic_phone"></ImageView>
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@+id/passwordIcon"
+            android:background="@android:color/transparent"
+            android:hint="Parola"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textSize="16sp" />
 
 
-        <EditText
-            android:id="@+id/edittext_phone_sign_up"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="TELEFON NUMARASI"
+    </RelativeLayout>
 
-            android:inputType="numberDecimal"></EditText>
-    </LinearLayout>
-
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/layout_cinsiyet_sign_up"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:orientation="horizontal"
+        android:background="@drawable/round_back_dark_blue5_15"
         android:paddingLeft="50dp"
+        android:maxLines="1"
+        android:paddingStart="60dp"
+        android:paddingEnd="60dp"
+        android:textSize="16sp"
         android:paddingRight="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_phone_sign_up">
-
-        <ImageView
-            android:id="@+id/iv_cinsiyet"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:src="@drawable/gender"></ImageView>
-
+        app:layout_constraintStart_toStartOf="parent">
 
         <RadioGroup
             android:id="@+id/radio_group_cinsiyet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="183dp"
+            android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/radio_erkek"
-                android:layout_width="wrap_content"
+                android:layout_width="103dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="3dp"
                 android:text="Erkek" />
-
-            <RadioButton
-                android:id="@+id/radio_kadin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Kadın" />
         </RadioGroup>
+
+        <RadioButton
+            android:id="@+id/radio_kadin"
+            android:layout_width="139dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="3dp"
+            android:text="Kadın" />
+
+
+    </RelativeLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:background="#2D5CE8"
+        android:text="Kayıt Ol"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zaten hesabınız var mı?" />
+
+        <TextView
+            android:id="@+id/signInBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Giriş Yap"
+            android:textColor="#2D5CE8"
+            android:textStyle="bold" />
+
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button_sign_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="120dp"
-        android:backgroundTint="@color/black"
-        android:onClick="signUp"
-        android:text="KAYIT OL"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.548"
-        app:layout_constraintStart_toStartOf="parent"></Button>
+</LinearLayout>
 
-    <ImageView
-        android:id="@+id/iv_bank_sign_up"
-        android:layout_width="84dp"
-        android:layout_height="84dp"
-        android:layout_marginStart="170dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="157dp"
-        android:layout_marginBottom="16dp"
-        android:src="@drawable/ic_bank"
-        app:layout_constraintBottom_toTopOf="@+id/app_name_sign_up"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/app_name_sign_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="133dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="109dp"
-        android:layout_marginBottom="19dp"
-        android:text="KAYIT OL"
-        android:textColor="@color/black"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/layout_user_name_sign_up"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_bank_sign_up" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,7 +18,7 @@
         android:icon="@drawable/bottom_btn3"
         tools:ignore="MenuTitle"/>
     <item
-        android:id="@+id/kampanyalarFragment"
+        android:id="@+id/campaignsFragment"
         android:icon="@drawable/bottom_btn4"
         tools:ignore="MenuTitle"/>
 

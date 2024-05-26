@@ -1,4 +1,23 @@
 <resources>
     <string name="app_name">BankingApplication</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="eft_masraf_title">EFT/FAST/Havale işlemlerinde sıfır masraf!</string>
+    <string name="eft_masraf_desc">Dijital kanallardan gerçekleştirilen EFT/FAST/Havale işlemlerinde sıfır masraf!</string>
+    <string name="eft_indirim_title">EFT/FAST işlemlerinde %50 indirim</string>
+    <string name="eft_indirim_desc">İnternet ve mobil bankacılıktan gerçekleştirilen EFT/FAST işlem masraflarında %50 oranında indirim yapılmaktadır.</string>
+    <string name="havale_masraf_title">Dijital kanallardan gerçekleştirilen havalelerde sıfır masraf!</string>
+    <string name="havale_masraf_desc">İnternet ve mobil bankacılıkta aynı hesaplar arasında gerçekleştirilen havale işlemlerinden masraf alınmamaktadır.</string>
+    <string name="harca_bankkart_title">10.000 TL ve üzeri harcamanıza, 50 TL Bankkart Lira</string>
+    <string name="harca_bankkart_desc">10.000 TL ye ulaşan kredi kartı harcamanıza 50 tl bankkart Lira verilecektir.</string>
+    <string name="vadeli_mevduat_title">Vadeli mevduata ek faiz</string>
+    <string name="vadeli_mevduat_desc">İnternet veya mobil bankacılıktan açılan 32-91 gün vadeli TL mevduat hesaplarına +%2 faiz oranı uygulanmaktadır.</string>
+    <string name="aidatsiz_kredi_karti_title">Aidatsız Kredi Kartı</string>
+    <string name="aidatsiz_kredi_karti_desc">Süper Şube müşterilerine kart aidatı (ek kartlar dahil) yansıtılmamaktadır.</string>
+    <string name="taksitlendirme_imkani_title">Kart İşlemlerini Sonradan Taksitlendirme İmkanı</string>
+    <string name="taksitlendirme_imkani_desc">Kredi kartından yapılan işlemlerde 4 taksite kadar ücretsiz sonradan taksitlendirme yapılabilmektedir.</string>
+    <string name="kamu_atm_limit_title">Tüm kamu ATMleri işlem limitleri dahilinde masrafsız!</string>
+    <string name="kamu_atm_limit_desc">Tüm kamu ATMlerinde işlem limitleri dahilinde para çekme ve para yatırma işlemlerinden masraf alınmamaktadır.</string>
+
 </resources>
+

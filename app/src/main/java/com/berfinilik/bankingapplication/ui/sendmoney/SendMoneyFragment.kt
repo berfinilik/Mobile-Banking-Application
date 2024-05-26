@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.berfinilik.bankingapplication.databinding.FragmentSendMoneyBinding
 import com.berfinilik.bankingapplication.Domain.Contact
 import com.berfinilik.bankingapplication.R
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,6 +39,19 @@ class SendMoneyFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+        // Argumentları al
+        val picUrl = arguments?.getString("picUrl")
+
+        // Glide kullanarak ImageView'e resmi yükle
+        picUrl?.let {
+            Glide.with(requireContext())
+                .load(it)
+                .into(binding.aliciIv) // ImageView'in ID'si burada kullanılmalı
+        }
+
+
 
         val currentUser = FirebaseAuth.getInstance().currentUser
         val db = FirebaseFirestore.getInstance()
@@ -67,7 +81,7 @@ class SendMoneyFragment : Fragment() {
             val selectedContactPhoneNumber = it.getString("selected_contact_phone_number", "")
             val selectedContactPicUrl = it.getString("selected_contact_pic_url", "")
 
-            val selectedContactFullName="$selectedContactName $selectedContactSurname"
+            val selectedContactFullName = "$selectedContactName $selectedContactSurname"
 
             selectedContact = Contact(
                 name = selectedContactName,
@@ -100,42 +114,64 @@ class SendMoneyFragment : Fragment() {
                 return@setOnClickListener
             }
 
-            selectedContact?.let { contact ->
+            val currentUser = FirebaseAuth.getInstance().currentUser
 
-                try {
-                    viewModel.transferMoney(
-                        senderUid = FirebaseAuth.getInstance().currentUser?.uid ?: "",
-                        recipientUid = contact.uid ?:"",
-                        amount = amount,
-                        contact=contact,
-                        onSuccess = {
+            currentUser?.let { senderUser ->
+                selectedContact?.let { recipientContact ->
+
+                    if (recipientContact.uid.isNotEmpty()) { // Alıcı UID boş değilse devam et
+                        try {
+                            viewModel.transferMoney(
+                                senderUid = senderUser.uid,
+                                recipientUid = recipientContact.uid,
+                                amount = amount,
+                                contact = recipientContact,
+                                onSuccess = {
+                                    Toast.makeText(
+                                        activity,
+                                        "Para transferi gerçekleşti",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                },
+                                onFailure = { errorMessage ->
+                                    Toast.makeText(
+                                        activity,
+                                        errorMessage,
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+                            )
+                        } catch (e: Exception) {
+                            Log.e(TAG, "Transfer işlemi sırasında bir hata oluştu: ${e.message}", e)
                             Toast.makeText(
                                 activity,
-                                "Para transferi gerçekleşti",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        },
-                        onFailure = { errorMessage ->
-                            Toast.makeText(
-                                activity,
-                                errorMessage,
+                                "Transfer işlemi sırasında bir hata oluştu",
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
-                    )
-                } catch (e: Exception) {
-                    Log.e(TAG, "Transfer işlemi sırasında bir hata oluştu: ${e.message}", e)
+                    } else {
+                        Toast.makeText(
+                            activity,
+                            "Alıcı bilgileri bulunamadı",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                } ?: run {
                     Toast.makeText(
                         activity,
-                        "Transfer işlemi sırasında bir hata oluştu",
+                        "Alıcı bilgileri bulunamadı",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
+            } ?: run {
+                Toast.makeText(
+                    activity,
+                    "Oturum açan kullanıcı bulunamadı",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
-
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

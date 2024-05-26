@@ -34,7 +34,6 @@ class SendMoneyViewModel @Inject constructor(
                     .update("Hesap Bakiyesi", FieldValue.increment(amount))
                     .addOnSuccessListener {
                         onSuccess()
-                        onSuccess()
                     }
                     .addOnFailureListener { e ->
                         onFailure("Para gönderilirken bir hata oluştu: ${e.message}")

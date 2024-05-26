@@ -11,7 +11,7 @@ import com.berfinilik.bankingapplication.databinding.FragmentLiabilitesBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class BorclarimFragment : Fragment() {
+class LiabilitesFragment : Fragment() {
 
     private var _binding: FragmentLiabilitesBinding? = null
     private val binding get() = _binding!!
@@ -24,13 +24,14 @@ class BorclarimFragment : Fragment() {
     ): View? {
         _binding = FragmentLiabilitesBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.kartNumarasi.observe(viewLifecycleOwner, Observer { kartNumarasi ->
-            binding.textViewKrediKartNo.text = kartNumarasi
+            binding.textViewKrediKartNo.text = kartNumarasi ?:"0"
         })
 
         viewModel.limit.observe(viewLifecycleOwner, Observer { limit ->
@@ -45,7 +46,6 @@ class BorclarimFragment : Fragment() {
         viewModel.errorMessage.observe(viewLifecycleOwner, Observer { errorMessage ->
         })
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

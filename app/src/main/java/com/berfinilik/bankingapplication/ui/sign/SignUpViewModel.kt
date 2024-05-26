@@ -6,15 +6,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-
-
 @HiltViewModel
 class SignUpViewModel @Inject constructor(private val auth: FirebaseAuth,private val firestore: FirebaseFirestore) : ViewModel() {
 
     val signUpResult: MutableLiveData<Boolean> = MutableLiveData()
-
-
-
     fun signUpUser(
         email: String,
         password: String,
@@ -51,13 +46,8 @@ class SignUpViewModel @Inject constructor(private val auth: FirebaseAuth,private
                         signUpResult.value = false
                     }
                 }
-
         } catch (e: Exception) {
             signUpResult.value = false
         }
     }
-
-
-
-
 }

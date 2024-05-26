@@ -46,7 +46,6 @@
                     android:layout_width="72dp"
                     android:layout_height="72dp"
                     android:layout_margin="32dp"
-                    android:src="@drawable/ic_user"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -70,7 +69,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
-                    android:textColor="#000000"
+                    android:textColor="@color/black"
                     android:textSize="40sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -87,7 +86,7 @@
                     android:layout_height="wrap_content"
 
                     android:layout_marginTop="100dp"
-                    android:background="#FF4081"
+                    android:background="@drawable/white_background"
                     android:orientation="vertical"
                     android:paddingBottom="100dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -113,7 +112,7 @@
                                 android:id="@+id/view10"
                                 android:layout_width="64dp"
                                 android:layout_height="64dp"
-                                android:background="@android:color/darker_gray"
+                                android:background="@drawable/circle_background"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -122,9 +121,7 @@
                                 android:id="@+id/iv_send"
                                 android:layout_width="55dp"
                                 android:layout_height="61dp"
-                                android:background="@android:color/darker_gray"
                                 android:src="@drawable/ic_send"
-
                                 app:layout_constraintBottom_toBottomOf="@+id/view10"
                                 app:layout_constraintEnd_toEndOf="@+id/view10"
                                 app:layout_constraintStart_toStartOf="@+id/view10"
@@ -136,8 +133,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
                                 android:text="Para Gönder"
-                                android:textColor="@color/white"
-
                                 android:textStyle="bold"
                                 app:layout_constraintEnd_toEndOf="@+id/view10"
                                 app:layout_constraintStart_toStartOf="@+id/view10"
@@ -153,8 +148,7 @@
                                 android:id="@+id/view11"
                                 android:layout_width="64dp"
                                 android:layout_height="64dp"
-
-                                android:background="@android:color/darker_gray"
+                                android:background="@drawable/circle_background"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -163,8 +157,6 @@
                                 android:id="@+id/iv_varliklarim"
                                 android:layout_width="80dp"
                                 android:layout_height="69dp"
-                                android:background="@android:color/darker_gray"
-
                                 android:src="@drawable/money"
                                 app:layout_constraintBottom_toBottomOf="@+id/view11"
                                 app:layout_constraintEnd_toEndOf="@+id/view11"
@@ -177,8 +169,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
                                 android:text="Varlıklarım"
-                                android:textColor="@color/white"
-
                                 android:textStyle="bold"
                                 app:layout_constraintEnd_toEndOf="@+id/view11"
                                 app:layout_constraintStart_toStartOf="@+id/view11"
@@ -194,7 +184,7 @@
                                 android:id="@+id/view12"
                                 android:layout_width="64dp"
                                 android:layout_height="64dp"
-                                android:background="@android:color/darker_gray"
+                                android:background="@drawable/circle_background"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -203,8 +193,6 @@
                                 android:id="@+id/iv_borclar"
                                 android:layout_width="55dp"
                                 android:layout_height="61dp"
-                                android:background="@android:color/darker_gray"
-
                                 android:src="@drawable/debt"
                                 app:layout_constraintBottom_toBottomOf="@+id/view12"
                                 app:layout_constraintEnd_toEndOf="@+id/view12"
@@ -217,8 +205,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
                                 android:text="Borçlarım"
-                                android:textColor="@color/white"
-
                                 android:textStyle="bold"
                                 app:layout_constraintEnd_toEndOf="@+id/view12"
                                 app:layout_constraintStart_toStartOf="@+id/view12"
@@ -234,7 +220,7 @@
                                 android:id="@+id/viewFreeze"
                                 android:layout_width="64dp"
                                 android:layout_height="64dp"
-                                android:background="@android:color/darker_gray"
+                                android:background="@drawable/circle_background"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -243,7 +229,6 @@
                                 android:id="@+id/iv_freeze"
                                 android:layout_width="45dp"
                                 android:layout_height="45dp"
-                                android:background="@android:color/darker_gray"
                                 android:src="@drawable/lock"
                                 app:layout_constraintBottom_toBottomOf="@+id/viewFreeze"
                                 app:layout_constraintEnd_toEndOf="@+id/viewFreeze"
@@ -256,8 +241,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
                                 android:text="Dondur"
-                                android:textColor="@color/white"
-
                                 android:textStyle="bold"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="@+id/viewFreeze"
@@ -276,12 +259,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="32dp"
-
                             android:layout_marginTop="32dp"
                             android:layout_marginEnd="32dp"
                             android:layout_weight="1"
+                            android:textColor="@color/black"
                             android:text="PARA GÖNDER"
-                            android:textColor="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -294,7 +276,7 @@
                             android:layout_weight="1"
                             android:text="KİŞİ LİSTESİ"
                             android:textAlignment="viewEnd"
-                            android:textColor="@color/white"
+                            android:textColor="#3590A2"
                             android:textStyle="bold" />
                     </LinearLayout>
 
@@ -305,7 +287,6 @@
                         android:clipToPadding="false"
                         android:paddingStart="24dp"
                         android:paddingEnd="24dp"
-                        android:textColor="@color/white"
                         tools:visibility="visible" />
 
 
@@ -313,6 +294,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
+
 
                         <TextView
                             android:id="@+id/textView126"
@@ -323,29 +305,28 @@
                             android:layout_marginEnd="32dp"
                             android:layout_weight="1"
                             android:text="İŞLEM GEÇMİŞİ"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/textView134"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="32dp"
-                            android:layout_marginEnd="32dp"
-                            android:layout_weight="1"
-                            android:text="TÜMÜNÜ GÖR"
-                            android:textAlignment="viewEnd"
-                            android:textColor="@color/white"
-                            android:textStyle="bold" />
                     </LinearLayout>
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginTop="16dp"
-                        android:layout_marginEnd="32dp">
+                        android:layout_marginEnd="32dp"
+                        android:orientation="horizontal">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/transactionRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clipToPadding="false"
+                            android:paddingStart="24dp"
+                            android:paddingEnd="24dp"
+                            tools:visibility="visible"></androidx.recyclerview.widget.RecyclerView>
 
                         <TextView
                             android:id="@+id/textView148"
@@ -398,7 +379,7 @@
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -408,7 +389,7 @@
                     android:layout_height="200dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginEnd="32dp"
-                    android:background="#9B8E9C"
+                    android:background="@drawable/cart_background"
                     app:layout_constraintBottom_toTopOf="@+id/linearLayout"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -499,7 +480,9 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>

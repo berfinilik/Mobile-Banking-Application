@@ -1,119 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.sign.SignInFragment">
-
-    <ImageView
-        android:id="@+id/iv_bank_sign_in"
-        android:layout_width="84dp"
-        android:layout_height="84dp"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/ic_bank"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></ImageView>
+    android:gravity="center"
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/app_name_sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="BANK"
-        android:textColor="@color/black"
-        android:textSize="34sp"
+        android:layout_gravity="center"
+        android:text="Giriş Yap"
+        android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_bank_sign_in"></TextView>
+        android:textColor="#000000"/>
 
-    <LinearLayout
-        android:id="@+id/layout_id_number_sign_in"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:orientation="horizontal"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/app_name_sign_in">
+        android:layout_gravity="center"
+        android:text="Lütfen hesabınıza giriş yapın"
+        android:layout_marginTop="5dp"/>
 
-        <ImageView
-            android:id="@+id/iv_eposta_sign_in"
-            android:layout_width="34dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_user"></ImageView>
-
-        <EditText
-            android:id="@+id/etEPosta"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="E-MAİL"></EditText>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_user_password_sign_in"
+    <EditText
+        android:id="@+id/etEPosta"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:orientation="horizontal"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_id_number_sign_in">
+        android:layout_height="55dp"
+        android:background="@drawable/round_back_dark_blue5_15"
+        android:hint="Email"
+        android:maxLines="1"
+        android:inputType="text"
+        android:textSize="16sp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="40dp"
+        />
 
-        <ImageView
-            android:id="@+id/iv_password_sign_in"
-            android:layout_width="36dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_password"></ImageView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_back_dark_blue5_15">
 
         <EditText
             android:id="@+id/etPassword"
+            android:layout_toStartOf="@+id/passwordIcon"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="PAROLA"
-            android:inputType="number" />
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:hint="Şifre"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textSize="16sp"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            />
 
-    <Button
-        android:id="@+id/button_sign_in"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="116dp"
-        android:backgroundTint="@color/black"
-        android:onClick="signIn"
-        android:text="GİRİŞ YAP"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_user_password_sign_in"></Button>
+    </RelativeLayout>
 
-    <Button
-        android:id="@+id/buttonSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Giriş Yap"
+        android:textAllCaps="false"
         android:layout_marginTop="40dp"
-        android:backgroundTint="@color/white"
-        android:text="KAYIT OL"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.023"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_sign_in"
-        app:layout_constraintVertical_bias="0.0" />
+        android:background="#2D5CE8"
+        android:textColor="#FFFFFF"
+        />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#1A000000"
+            android:layout_toStartOf="@+id/orTxt"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:id="@+id/orTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VEYA"
+            android:layout_centerInParent="true"
+            android:textSize="12sp"
+            android:textColor="#80000000"/>
+
+        <View
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#1A000000"
+            android:layout_toEndOf="@+id/orTxt"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hesabınız yok mu?"/>
+
+        <TextView
+            android:id="@+id/signUpBtn"
+            android:layout_marginStart="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kayıt Ol"
+            android:textColor="#2D5CE8"
+            android:textStyle="bold"/>
+    </LinearLayout>
+</LinearLayout>

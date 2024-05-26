@@ -4,6 +4,8 @@
     android:id="@+id/main_activity_nav"
     app:startDestination="@id/loginFragment">
 
+
+
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.berfinilik.bankingapplication.ui.sign.SignInFragment"
@@ -36,10 +38,10 @@
         tools:layout="@layout/fragment_home_page" />
 
     <fragment
-        android:id="@+id/kampanyalarFragment"
-        android:name="com.berfinilik.bankingapplication.ui.kampanyalar.KampanyalarFragment"
-        android:label="fragment_kampanyalar"
-        tools:layout="@layout/fragment_kampanyalar" />
+        android:id="@+id/campaignsFragment"
+        android:name="com.berfinilik.bankingapplication.ui.campaigns.CampaignsFragment"
+        android:label="fragment_campaigns"
+        tools:layout="@layout/fragment_campaigns" />
 
     <fragment
         android:id="@+id/cardManagementFragment"
@@ -48,8 +50,8 @@
         tools:layout="@layout/fragment_card" />
 
     <fragment
-        android:id="@+id/borclarimFragment"
-        android:name="com.berfinilik.bankingapplication.ui.liabilites.BorclarimFragment"
+        android:id="@+id/liabilitesFragment"
+        android:name="com.berfinilik.bankingapplication.ui.liabilites.LiabilitesFragment"
         android:label="fragment_borclarim"
         tools:layout="@layout/fragment_liabilites" />
 
@@ -87,8 +89,8 @@
         app:destination="@id/homePageFragment" />
 
     <action
-        android:id="@+id/action_homePageFragment_to_kampanyalarFragment"
-        app:destination="@id/kampanyalarFragment" />
+        android:id="@+id/action_homePageFragment_to_campaignsFragmentFragment"
+        app:destination="@id/campaignsFragment" />
 
     <action
         android:id="@+id/action_loginFragment_to_signUpFragment"
@@ -120,11 +122,12 @@
 
 
     <action
-        android:id="@+id/actionHomePageFragmentToBorclarimFragment"
-        app:destination="@id/borclarimFragment" />
+        android:id="@+id/actionHomePageFragmentToLiabilitesFragment"
+        app:destination="@id/liabilitesFragment" />
 
-
-
+    <action
+        android:id="@+id/action_homePageFragment_to_loginFragment"
+        app:destination="@id/loginFragment" />
 
 
 </navigation>

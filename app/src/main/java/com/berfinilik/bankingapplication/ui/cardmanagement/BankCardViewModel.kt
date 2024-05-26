@@ -35,7 +35,7 @@ class BankCardViewModel @Inject constructor(
                     }
                 }
                 .addOnFailureListener { exception ->
-                    // Handle failure
+
                 }
         }
     }

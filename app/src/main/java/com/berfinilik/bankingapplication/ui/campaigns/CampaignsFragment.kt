@@ -1,4 +1,4 @@
-package com.berfinilik.bankingapplication.ui.kampanyalar
+package com.berfinilik.bankingapplication.ui.campaigns
 
 import android.app.Dialog
 import android.os.Bundle
@@ -12,51 +12,51 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.berfinilik.bankingapplication.Domain.KampanyaModel
 import com.berfinilik.bankingapplication.R
-import com.berfinilik.bankingapplication.databinding.FragmentKampanyalarBinding
+import com.berfinilik.bankingapplication.databinding.FragmentCampaignsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class KampanyalarFragment : Fragment() {
+class CampaignsFragment : Fragment() {
 
-    private var _binding: FragmentKampanyalarBinding? = null
+    private var _binding: FragmentCampaignsBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: KampanyalarViewModel by viewModels()
+    private val viewModel: CampaignsViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentKampanyalarBinding.inflate(inflater, container, false)
+        _binding = FragmentCampaignsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // ViewModel'deki seçili kampanyayı gözlemleyin ve dialog gösterin
         viewModel.selectedKampanya.observe(viewLifecycleOwner, Observer { kampanya ->
             kampanya?.let {
                 showCustomDialog(it.title, it.message, it.imageResId)
             }
         })
 
-        // CardView'lara tıklanınca ViewModel'deki kampanyayı seçin
+
         binding.cardView1.setOnClickListener {
             viewModel.selectKampanya(
                 KampanyaModel(
-                    "EFT/FAST/Havale işlemlerinde sıfır masraf!",
-                    "Dijital kanallardan gerçekleştirilen EFT/FAST/Havale işlemlerinde sıfır masraf!",
+                    R.string.eft_masraf_title,
+                    R.string.eft_masraf_desc,
                     R.drawable.sifirmasraf
+
                 )
             )
         }
         binding.cardView2.setOnClickListener {
             viewModel.selectKampanya(
                 KampanyaModel(
-                    "EFT/FAST işlemlerinde %50 indirim",
-                    "İnternet ve mobil bankacılıktan gerçekleştirilen EFT/FAST işlem masraflarında %50 oranında indirim yapılmaktadır.",
+                    R.string.eft_indirim_title,
+                    R.string.eft_indirim_desc,
                     R.drawable.yuzdeellindirim
                 )
             )
@@ -64,8 +64,8 @@ class KampanyalarFragment : Fragment() {
         binding.cardView3.setOnClickListener {
             viewModel.selectKampanya(
                 KampanyaModel(
-                    "Dijital kanallardan gerçekleştirilen havalelerde sıfır masraf!",
-                    "İnternet ve mobil bankacılıkta aynı hesaplar arasında gerçekleştirilen havale işlemlerinden masraf alınmamaktadır.",
+                    R.string.havale_masraf_title,
+                    R.string.havale_masraf_desc,
                     R.drawable.dijitalkanalsifirmasraf
                 )
             )
@@ -73,8 +73,8 @@ class KampanyalarFragment : Fragment() {
         binding.cardView4.setOnClickListener {
             viewModel.selectKampanya(
                 KampanyaModel(
-                    "10.000 TL ve üzeri harcamanıza, 50 TL Bankkart Lira",
-                    "10.000 TL'ye ulaşan kredi kartı harcamanıza 50 tl bankkart Lira verilecektir.",
+                    R.string.harca_bankkart_title,
+                    R.string.harca_bankkart_desc,
                     R.drawable.bankkartlira
                 )
             )
@@ -82,8 +82,8 @@ class KampanyalarFragment : Fragment() {
         binding.cardView6.setOnClickListener {
             viewModel.selectKampanya(
                 KampanyaModel(
-                    "Vadeli mevduata ek faiz",
-                    "İnternet veya mobil bankacılıktan açılan 32-91 gün vadeli TL mevduat hesaplarına +%2 faiz oranı uygulanmaktadır.",
+                    R.string.vadeli_mevduat_title,
+                    R.string.vadeli_mevduat_desc,
                     R.drawable.vadelimevduataekfaiz
                 )
             )
@@ -91,8 +91,8 @@ class KampanyalarFragment : Fragment() {
         binding.cardView7.setOnClickListener {
             viewModel.selectKampanya(
                 KampanyaModel(
-                    "Aidatsız Kredi Kartı",
-                    "Süper Şube müşterilerine kart aidatı (ek kartlar dahil) yansıtılmamaktadır.",
+                    R.string.aidatsiz_kredi_karti_title,
+                    R.string.aidatsiz_kredi_karti_desc,
                     R.drawable.aidatsizkredikarti
                 )
             )
@@ -100,8 +100,8 @@ class KampanyalarFragment : Fragment() {
         binding.cardView5.setOnClickListener {
             viewModel.selectKampanya(
                 KampanyaModel(
-                    "Kart işlemlerini sonradan taksitlendirme imkanı",
-                    "Kredi kartından yapılan işlemlerde 4 taksite kadar ücretsiz sonradan taksitlendirme yapılabilmektedir.",
+                    R.string.taksitlendirme_imkani_title,
+                    R.string.taksitlendirme_imkani_desc,
                     R.drawable.taksit
                 )
             )
@@ -109,15 +109,16 @@ class KampanyalarFragment : Fragment() {
         binding.cardView8.setOnClickListener {
             viewModel.selectKampanya(
                 KampanyaModel(
-                    "Tüm kamu ATM'leri işlem limitleri dahilinde masrafsız!",
-                    "Tüm kamu ATM'lerinde işlem limitleri dahilinde para çekme ve para yatırma işlemlerinden masraf alınmamaktadır.",
+                    R.string.kamu_atm_limit_title,
+                    R.string.kamu_atm_limit_desc,
                     R.drawable.atm
                 )
             )
         }
     }
 
-    private fun showCustomDialog(title: String, message: String, imageResId: Int) {
+
+    private fun showCustomDialog(titleResId: Int, messageResId: Int, imageResId: Int) {
         val dialog = Dialog(requireContext())
         dialog.setContentView(R.layout.dialog_info_layout)
 
@@ -126,8 +127,8 @@ class KampanyalarFragment : Fragment() {
         val closeButton = dialog.findViewById<ImageView>(R.id.closeButton)
         val dialogImageView = dialog.findViewById<ImageView>(R.id.dialogImageView)
 
-        dialogTitle.text = title
-        dialogText.text = message
+        dialogTitle.text = getString(titleResId)
+        dialogText.text = getString(messageResId)
         dialogImageView.setImageResource(imageResId)
 
         closeButton.setOnClickListener {

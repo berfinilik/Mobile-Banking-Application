@@ -12,7 +12,6 @@ import androidx.navigation.fragment.findNavController
 import com.berfinilik.bankingapplication.R
 import com.berfinilik.bankingapplication.databinding.FragmentSignUpBinding
 import dagger.hilt.android.AndroidEntryPoint
-
 @AndroidEntryPoint
 class SignUpFragment : Fragment() {
 

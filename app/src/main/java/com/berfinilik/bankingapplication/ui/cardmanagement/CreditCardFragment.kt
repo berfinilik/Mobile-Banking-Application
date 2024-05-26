@@ -10,7 +10,6 @@ import com.berfinilik.bankingapplication.databinding.FragmentCreditCardBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.AndroidEntryPoint
-
 @AndroidEntryPoint
 class CreditCardFragment : Fragment() {
     private var _binding: FragmentCreditCardBinding? = null
@@ -27,7 +26,6 @@ class CreditCardFragment : Fragment() {
         _binding = FragmentCreditCardBinding.inflate(inflater, container, false)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -36,7 +34,6 @@ class CreditCardFragment : Fragment() {
 
         checkCreditCard()
     }
-
     private fun checkCreditCard() {
         val currentUser = auth.currentUser
         if (currentUser != null) {
@@ -63,7 +60,6 @@ class CreditCardFragment : Fragment() {
                 }
         }
     }
-
     private fun showDialog(message: String) {
         AlertDialog.Builder(requireContext())
             .setMessage(message)
@@ -72,7 +68,6 @@ class CreditCardFragment : Fragment() {
             }
             .show()
     }
-
     private fun loadCreditCardData() {
         val currentUser = auth.currentUser
         if (currentUser != null) {
@@ -98,7 +93,6 @@ class CreditCardFragment : Fragment() {
                 }
         }
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

@@ -15,14 +15,15 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.berfinilik.bankingapplication.Adapter.ContactAdapter
+import com.berfinilik.bankingapplication.Adapter.TransactionAdapter
+import com.berfinilik.bankingapplication.Domain.Transaction
 import com.berfinilik.bankingapplication.R
 import com.berfinilik.bankingapplication.databinding.FragmentHomePageBinding
-import com.berfinilik.bankingapplication.ui.sign.SignInFragment
-import com.berfinilik.bankingapplication.ui.sign.SignUpFragment
 import com.bumptech.glide.Glide
-import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -33,6 +34,7 @@ class HomePageFragment : Fragment() {
 
     private val viewModel: HomePageViewModel by viewModels()
     private lateinit var contactAdapter: ContactAdapter
+    private lateinit var transactionAdapter: TransactionAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,13 +49,11 @@ class HomePageFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         observeViewModel()
-
-
-
-
+        fetchTransactions()
 
         binding.ivSend.setOnClickListener {
             findNavController().navigate(R.id.actionHomePageFragmentToSendMoneyFragment)
+            navigateToSendMoneyFragment()
         }
 
         binding.textViewSend.setOnClickListener {
@@ -67,10 +67,10 @@ class HomePageFragment : Fragment() {
             findNavController().navigate(R.id.actionHomePageFragmentToVarliklarimFragment)
         }
         binding.textViewBorclarim.setOnClickListener {
-            findNavController().navigate(R.id.actionHomePageFragmentToBorclarimFragment)
+            findNavController().navigate(R.id.actionHomePageFragmentToLiabilitesFragment)
         }
         binding.ivBorclar.setOnClickListener {
-            findNavController().navigate(R.id.actionHomePageFragmentToBorclarimFragment)
+            findNavController().navigate(R.id.actionHomePageFragmentToLiabilitesFragment)
         }
         binding.ivVarliklarim.setColorFilter(ContextCompat.getColor(requireContext(), android.R.color.white))
         binding.ivBorclar.setColorFilter(ContextCompat.getColor(requireContext(), android.R.color.white))
@@ -93,11 +93,11 @@ class HomePageFragment : Fragment() {
                         val kartGecerlilikSuresi=document.getString("kart son kullanma tarihi")?:""
                         val picUrl=document.getString("picUrl")?: ""
 
-                        binding.textViewCardOwner.setText(fullName)
-                        binding.textViewBakiye.setText(hesapBakiyesi.toString()+"TL")
-                        binding.textViewKartNumarasi.setText(kartnumarasi)
-                        binding.textViewSonTarih.setText(kartGecerlilikSuresi)
-                        binding.textView3.setText("Hoşgeldiniz " +fullName)
+                        binding.textViewCardOwner.text = fullName
+                        binding.textViewBakiye.text = "$hesapBakiyesi TL"
+                        binding.textViewKartNumarasi.text = kartnumarasi
+                        binding.textViewSonTarih.text = kartGecerlilikSuresi
+                        binding.textView3.text = "Hoşgeldiniz $fullName"
                         Glide.with(requireContext()).load(picUrl).into(binding.imageView8)
                     }
                 }
@@ -106,10 +106,33 @@ class HomePageFragment : Fragment() {
                 }
         }
     }
+
+    private fun fetchTransactions() {
+        val currentUserUid = FirebaseAuth.getInstance().currentUser?.uid
+        val db = Firebase.firestore
+        val transactionsCollectionRef = currentUserUid?.let { db.collection("users").document(it).collection("transactions") }
+
+        transactionsCollectionRef?.get()?.addOnSuccessListener { querySnapshot ->
+            val transactionList = mutableListOf<Transaction>()
+            for (document in querySnapshot.documents) {
+                val transactionType = document.getString("transaction type") ?: ""
+                val amount = document.getDouble("transaction amount") ?: 0.0
+                val date = document.getString("transaction date") ?: ""
+                val picture = document.getString("transaction pic url") ?: ""
+
+                val transaction = Transaction(transactionType, amount, date,picture)
+                transactionList.add(transaction)
+            }
+            transactionAdapter.submitList(transactionList)
+        }?.addOnFailureListener { exception ->
+            Log.e(ContentValues.TAG, "Error getting transactions: ", exception)
+            Toast.makeText(requireContext(), "Transactions couldn't be retrieved", Toast.LENGTH_SHORT).show()
+        }
+    }
     private fun showFreezeAccountDialog() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setTitle("Hesabı Dondur")
-        builder.setMessage("Hesabınızı dondurmak istiyor musunuz?")
+        builder.setMessage("Hesabınızı dondurmak istiyor musunuz?Bu işlemi gerçekleştirirseniz tekrar giriş yapabilmek için şubeye gitmeniz gerekir.")
         builder.setPositiveButton("Evet") { _, _ ->
             freezeAccount()
         }
@@ -119,11 +142,17 @@ class HomePageFragment : Fragment() {
         val dialog = builder.create()
         dialog.show()
     }
+
     private fun setupRecyclerView() {
         contactAdapter = ContactAdapter(emptyList())
+        transactionAdapter = TransactionAdapter()
         binding.contactRecyclerView.apply {
             adapter = contactAdapter
-            layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        }
+        binding.transactionRecyclerView.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = transactionAdapter
         }
     }
 
@@ -135,6 +164,11 @@ class HomePageFragment : Fragment() {
         viewModel.errorMessage.observe(viewLifecycleOwner, Observer { errorMessage ->
             Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_SHORT).show()
         })
+    }
+
+    private fun navigateToSendMoneyFragment() {
+        val action = HomePageFragmentDirections.actionHomePageFragmentToSendMoneyFragment()
+        findNavController().navigate(action)
     }
 
     override fun onDestroyView() {
@@ -151,6 +185,7 @@ class HomePageFragment : Fragment() {
                 .update("Hesap Durumu", false)
                 .addOnSuccessListener {
                     Toast.makeText(requireContext(), "Hesap Donduruldu", Toast.LENGTH_SHORT).show()
+                    findNavController().navigate(R.id.action_homePageFragment_to_loginFragment)
                 }
                 .addOnFailureListener { e ->
                     Toast.makeText(requireContext(), "Hesap dondurulurken hata oluştu: ${e.message}", Toast.LENGTH_SHORT).show()

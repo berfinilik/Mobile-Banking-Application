@@ -26,7 +26,6 @@ class LiabilitesViewModel @Inject constructor() : ViewModel() {
     init {
         fetchKartBilgileri()
     }
-
     private fun fetchKartBilgileri() {
         val currentUser = FirebaseAuth.getInstance().currentUser
         val db = FirebaseFirestore.getInstance()

@@ -20,7 +20,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FF4081"
+                android:background="#2D5CE8"
                 android:gravity="center"
                 android:padding="16dp"
                 android:text="Avantajlar/Kampanyalar"
@@ -92,7 +92,7 @@
                     app:layout_constraintBottom_toBottomOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageView38"
+                        android:id="@+id/cardView2Image"
                         android:layout_width="49dp"
                         android:layout_height="47dp"
                         android:layout_marginStart="64dp"
@@ -134,7 +134,7 @@
                     android:focusable="true">
 
                     <ImageView
-                        android:id="@+id/imageView31"
+                        android:id="@+id/cardView3Image"
                         android:layout_width="49dp"
                         android:layout_height="47dp"
                         android:layout_marginStart="72dp"
@@ -174,7 +174,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageView39"
+                        android:id="@+id/cardView4Image"
                         android:layout_width="61dp"
                         android:layout_height="51dp"
                         android:layout_marginStart="64dp"
@@ -217,7 +217,7 @@
                     android:focusable="true">
 
                     <ImageView
-                        android:id="@+id/imageView42"
+                        android:id="@+id/cardView5Image"
                         android:layout_width="55dp"
                         android:layout_height="43dp"
                         android:layout_marginStart="68dp"
@@ -250,7 +250,7 @@
                     android:textAlignment="center">
 
                     <ImageView
-                        android:id="@+id/imageView41"
+                        android:id="@+id/cardView6Image"
                         android:layout_width="50dp"
                         android:layout_height="47dp"
                         android:layout_marginStart="64dp"
@@ -289,7 +289,7 @@
                     android:focusable="true">
 
                     <ImageView
-                        android:id="@+id/imageView30"
+                        android:id="@+id/cardView7Image"
                         android:layout_width="75dp"
                         android:layout_height="67dp"
                         android:layout_marginStart="64dp"
@@ -311,7 +311,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.87"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView30" />
+                        app:layout_constraintTop_toBottomOf="@+id/cardView7Image" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -323,7 +323,7 @@
                     android:focusable="true">
 
                     <ImageView
-                        android:id="@+id/imageView32"
+                        android:id="@+id/cardView8Image"
                         android:layout_width="77dp"
                         android:layout_height="58dp"
                         android:layout_marginStart="64dp"
@@ -346,7 +346,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView32" />
+                        app:layout_constraintTop_toBottomOf="@+id/cardView8Image" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
         </LinearLayout>
