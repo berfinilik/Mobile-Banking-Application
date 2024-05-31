@@ -18,7 +18,9 @@ MVVM mimarisi kullanıldı.
 
 EKRAN GÖRÜNTÜLERİ ->
 
-![1adac08f-e107-4518-afc4-95003b2847bd](https://github.com/berfinilik/Mobile-Banking-Application/assets/140311905/89a5b9d7-1ac8-4d45-bd47-dc22a410cda0) ![9559a243-5ecb-4a17-b25b-a2d40a33a0da](https://github.com/berfinilik/Mobile-Banking-Application/assets/140311905/1688a893-ed27-483a-bc87-3a0d189b5d09)![a4d19a3b-d045-438b-b102-473e54e55159](https://github.com/berfinilik/Mobile-Banking-Application/assets/140311905/30003300-03fa-4919-a158-e4001828b742)
+![1adac08f-e107-4518-afc4-95003b2847bd](https://github.com/berfinilik/Mobile-Banking-Application/assets/140311905/89a5b9d7-1ac8-4d45-bd47-dc22a410cda0) 
+![9559a243-5ecb-4a17-b25b-a2d40a33a0da](https://github.com/berfinilik/Mobile-Banking-Application/assets/140311905/1688a893-ed27-483a-bc87-3a0d189b5d09)
+![a4d19a3b-d045-438b-b102-473e54e55159](https://github.com/berfinilik/Mobile-Banking-Application/assets/140311905/30003300-03fa-4919-a158-e4001828b742)
 ![77db0d2b-3074-458b-bed4-f1463218453f](https://github.com/berfinilik/Mobile-Banking-Application/assets/140311905/88a7dc56-3842-4e1d-a4f9-1e4b1de60c7d)
 ![04d9e9e6-372b-4239-9218-04f522efba78](https://github.com/berfinilik/Mobile-Banking-Application/assets/140311905/8c5fdf9d-2a05-4e59-94c6-0c5a3a681749)
 ![d949da1c-f397-43bd-8453-642ada03f85e](https://github.com/berfinilik/Mobile-Banking-Application/assets/140311905/7db04e4f-8eb5-416c-a764-078eff82c7fe)
